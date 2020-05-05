@@ -2,8 +2,8 @@
 import unittest
 from generalvector.vector2 import Vec2
 
-class Vector2Test(unittest.TestCase):
-    def test_vector2(self):
+class Vec2Test(unittest.TestCase):
+    def test_vec2(self):
         self.assertRaises(TypeError, Vec2, "")
         self.assertRaises(TypeError, Vec2, None, 5)
 

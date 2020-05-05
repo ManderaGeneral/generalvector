@@ -6,14 +6,13 @@ class Vec2:
     """
     Immutable vector2
     """
-    def __init__(self, x, y = None):
+    def __init__(self, x, y=None):
         if y is None:
             y = x
 
-        if not isinstance(x, (int, float)):
-            raise TypeError(f"x value {x} is not a number")
-        if not isinstance(y, (int, float)):
-            raise TypeError(f"y value {y} is not a number")
+        for key, value in {"x": x, "y": y}.items():
+            if not isinstance(value, (int, float)):
+                raise TypeError(f"{key} value {value} is not a number")
 
         self.x = x
         self.y = y
@@ -66,9 +65,7 @@ class Vec2:
         length = self.length()
         if length == 0:
             return Vec2(0)
-        self.x = self.x / length
-        self.y = self.y / length
-        return self
+        return self / length
 
 
 
