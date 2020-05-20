@@ -1,6 +1,6 @@
 
-from generalvector.vector2 import Vec2
+from generalvector import Vec2, Vec
 
 
-print(Vec2(1))
+print(Vec(255, 22, 50).hex())
 

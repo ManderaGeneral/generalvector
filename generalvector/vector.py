@@ -1,12 +1,21 @@
 
 from math import sqrt
 
+import random
+
+from generallibrary.values import clamp
+
+
 class Vec:
     """
     Immutable vector2
     """
     def __init__(self, x, y=None, z=None):
-        if z is None:
+        if isinstance(x, Vec):
+            z = x.z
+            y = x.y
+            x = x.x
+        elif z is None:
             if y is None:
                 y = x
                 z = x
@@ -63,10 +72,76 @@ class Vec:
             raise TypeError(f"{other} is not a number or vec")
 
     def length(self):
+        """
+        Get the length of this vector using pythagorean theorem
+        """
         return sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
 
     def normalized(self):
+        """
+        Get this vector normalized by dividing each value by it's length
+        """
         length = self.length()
         if length == 0:
             return Vec(0)
         return self / length
+
+    def round(self):
+        """
+        Get this vector with each value rounded
+        """
+        return Vec(round(self.x), round(self.y), round(self.z))
+
+    @staticmethod
+    def random(value1, value2=None):
+        """
+        Get a vector with random values.
+
+        :param float or Vec value1: Minimum value if value2 is specified too. Otherwise it's the maximum value and minimum becomes 0
+        :param float or Vec value2: Optional maximum value
+        """
+        if value2 is None:
+            value2 = Vec(value1)
+            value1 = Vec(0)
+        else:
+            value2 = Vec(value2)
+            value1 = Vec(value1)
+        return Vec(random.uniform(value1.x, value2.x), random.uniform(value1.y, value2.y), random.uniform(value1.z, value2.z))
+
+    def clamp(self, minimum, maximum):
+        """
+        Get this vector clamped between two values.
+        :param float or Vec minimum: Minimum value, floats are converted to Vec
+        :param float or Vec maximum: Maximum value, floats are converted to Vec
+        """
+        minimum = Vec(minimum)
+        maximum = Vec(maximum)
+        return Vec(clamp(self.x, minimum.x, maximum.x), clamp(self.y, minimum.y, maximum.y), clamp(self.z, minimum.z, maximum.z))
+
+    def hex(self):
+        """
+        Get a hex based on each value. Rounded and clamped between 0 and 255.
+        """
+        rounded = self.round().clamp(0, 255)
+        return f"#{'%02x' % rounded.x}{'%02x' % rounded.y}{'%02x' % rounded.z}"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

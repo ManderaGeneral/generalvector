@@ -14,6 +14,8 @@ class Vec2Test(unittest.TestCase):
         self.assertEqual(Vec2(5).x, 5)
         self.assertEqual(Vec2(5).y, 5)
 
+        self.assertEqual(Vec2(5, 2), Vec2(Vec2(5, 2)))
+
     def test_equal(self):
         self.assertRaises(TypeError, Vec2.__eq__, "")
 
@@ -77,4 +79,55 @@ class Vec2Test(unittest.TestCase):
         self.assertEqual(Vec2(0, 0.2).normalized(), Vec2(0, 1))
         self.assertEqual(Vec2(0, 0).normalized(), Vec2(0, 0))
         self.assertEqual(Vec2(0, -10).normalized(), Vec2(0, -1))
+
+    def test_round(self):
+        self.assertEqual(Vec2(5, 2), Vec2(5.3, 1.5).round())
+
+    def test_random(self):
+        randvec = Vec2.random(5)
+        self.assertGreaterEqual(randvec.x, 0)
+        self.assertGreaterEqual(randvec.y, 0)
+        self.assertLessEqual(randvec.x, 5)
+        self.assertLessEqual(randvec.y, 5)
+
+        randvec = Vec2.random(3, 5)
+        self.assertGreaterEqual(randvec.x, 3)
+        self.assertGreaterEqual(randvec.y, 3)
+        self.assertLessEqual(randvec.x, 5)
+        self.assertLessEqual(randvec.y, 5)
+
+        randvec = Vec2.random(Vec2(-1, 2))
+        self.assertGreaterEqual(randvec.x, -1)
+        self.assertGreaterEqual(randvec.y, 0)
+        self.assertLessEqual(randvec.x, 0)
+        self.assertLessEqual(randvec.y, 2)
+
+        randvec = Vec2.random(Vec2(4, 2), 8)
+        self.assertGreaterEqual(randvec.x, 4)
+        self.assertGreaterEqual(randvec.y, 2)
+        self.assertLessEqual(randvec.x, 8)
+        self.assertLessEqual(randvec.y, 8)
+
+        randvec = Vec2.random(8, Vec2(4, 2))
+        self.assertGreaterEqual(randvec.x, 4)
+        self.assertGreaterEqual(randvec.y, 2)
+        self.assertLessEqual(randvec.x, 8)
+        self.assertLessEqual(randvec.y, 8)
+
+        randvec = Vec2.random(Vec2(3.5, 3), Vec2(4, 2))
+        self.assertGreaterEqual(randvec.x, 3.5)
+        self.assertGreaterEqual(randvec.y, 2)
+        self.assertLessEqual(randvec.x, 4)
+        self.assertLessEqual(randvec.y, 3)
+
+    def test_clamp(self):
+        self.assertEqual(Vec2(5, 2), Vec2(6, 2).clamp(0, 5))
+        self.assertEqual(Vec2(5, 2), Vec2(0).clamp(Vec2(5, 2), 5))
+        self.assertEqual(Vec2(-3, 2), Vec2(0).clamp(Vec2(-3, 2), Vec2(-3, 2)))
+        self.assertEqual(Vec2(-3, 2), Vec2(0).clamp(Vec2(-30, 2), Vec2(-3, 20)))
+
+
+
+
+
 

@@ -3,9 +3,9 @@ from setuptools import setup, find_packages
 
 setup(
     name = "generalvector",
-    version = "1.1.0",
+    version = "1.2.0",
     description = (""
-                   "Added 3-d vectors. "
+                   "Added round, random, clamp and hex. "
                    "Simple vectors."
                    ""),
     packages = find_packages(),
