@@ -54,18 +54,20 @@ class Vec2Test(unittest.TestCase):
     def test_mul(self):
         self.assertRaises(TypeError, Vec2.__mul__, "")
         self.assertRaises(TypeError, Vec2.__mul__, True)
-        self.assertRaises(NotImplementedError, Vec2(5, 2).__mul__, Vec2(5, 2))
 
         self.assertEqual(Vec2(5, 2) * 2, Vec2(10, 4))
         self.assertEqual(Vec2(5, 2) * 2.5, Vec2(12.5, 5))
 
+        self.assertEqual(Vec2(5, 2) * Vec2(2, 1), Vec2(10, 2))
+
     def test_div(self):
         self.assertRaises(TypeError, Vec2.__truediv__, "")
         self.assertRaises(TypeError, Vec2.__truediv__, False)
-        self.assertRaises(NotImplementedError, Vec2(5, 2).__truediv__, Vec2(5, 2))
 
         self.assertEqual(Vec2(5, 2) / 2, Vec2(2.5, 1))
         self.assertEqual(Vec2(10, 5) / 2.5, Vec2(4, 2))
+
+        self.assertEqual(Vec2(10, 5) / Vec2(5, 2), Vec2(2, 2.5))
 
     def test_length(self):
         self.assertEqual(Vec2(10, 0).length(), 10)

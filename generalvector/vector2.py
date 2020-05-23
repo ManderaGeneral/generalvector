@@ -51,7 +51,7 @@ class Vec2:
 
     def __mul__(self, other):
         if isinstance(other, Vec2):
-            raise NotImplementedError
+            return Vec2(self.x * other.x, self.y * other.y)
         if isinstance(other, (int, float)):
             return Vec2(self.x * other, self.y * other)
         else:
@@ -59,7 +59,7 @@ class Vec2:
 
     def __truediv__(self, other):
         if isinstance(other, Vec2):
-            raise NotImplementedError
+            return Vec2(self.x / other.x, self.y / other.y)
         if isinstance(other, (int, float)):
             return Vec2(self.x / other, self.y / other)
         else:
