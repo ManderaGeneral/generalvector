@@ -122,6 +122,20 @@ class Vec2Test(unittest.TestCase):
         self.assertLessEqual(randvec.x, 4)
         self.assertLessEqual(randvec.y, 3)
 
+    def test_min(self):
+        self.assertEqual(Vec2(5, 2), Vec2(8, 2).min(Vec2(5, 5)))
+        self.assertEqual(Vec2(5, 2), Vec2(10).min(Vec2(5, 2)))
+        self.assertEqual(Vec2(5, 2), Vec2(5, 2).min(Vec2(99)))
+        self.assertEqual(Vec2(5, 5), Vec2(6.5).min(Vec2(5)))
+        self.assertEqual(Vec2(5.5, 5.5), Vec2(6.5).min(Vec2(5.5)))
+
+    def test_max(self):
+        self.assertEqual(Vec2(8, 5), Vec2(8, 2).max(Vec2(5, 5)))
+        self.assertEqual(Vec2(10), Vec2(10).max(Vec2(5, 2)))
+        self.assertEqual(Vec2(99), Vec2(5, 2).max(Vec2(99)))
+        self.assertEqual(Vec2(6.5), Vec2(6.5).max(Vec2(5)))
+        self.assertEqual(Vec2(6.5), Vec2(6.5).max(Vec2(5.5)))
+
     def test_clamp(self):
         self.assertEqual(Vec2(5, 2), Vec2(6, 2).clamp(0, 5))
         self.assertEqual(Vec2(5, 2), Vec2(0).clamp(Vec2(5, 2), 5))

@@ -27,6 +27,9 @@ class Vec2:
     def __str__(self):
         return f"Vec2[{self.x}, {self.y}]"
 
+    def __repr__(self):
+        return self.__str__()
+
     def __eq__(self, other):
         if isinstance(other, Vec2):
             return self.x == other.x and self.y == other.y
@@ -101,6 +104,24 @@ class Vec2:
             value2 = Vec2(value2)
             value1 = Vec2(value1)
         return Vec2(random.uniform(value1.x, value2.x), random.uniform(value1.y, value2.y))
+
+    def min(self, minimum):
+        """
+        Get a new vector2 containing the minimum value for each value in the two vectors2.
+
+        :param float or Vec2 minimum: Minimum value, floats are converted to Vec2
+        """
+        minimum = Vec2(minimum)
+        return Vec2(min(self.x, minimum.x), min(self.y, minimum.y))
+
+    def max(self, maximum):
+        """
+        Get a new vector2 containing the maximum value for each value in the two vectors2.
+
+        :param float or Vec2 maximum: Minimum value, floats are converted to Vec2
+        """
+        maximum = Vec2(maximum)
+        return Vec2(max(self.x, maximum.x), max(self.y, maximum.y))
 
     def clamp(self, minimum, maximum):
         """

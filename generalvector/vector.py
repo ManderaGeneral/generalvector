@@ -33,6 +33,9 @@ class Vec:
     def __str__(self):
         return f"Vec[{self.x}, {self.y}, {self.z}]"
 
+    def __repr__(self):
+        return self.__str__()
+
     def __eq__(self, other):
         if isinstance(other, Vec):
             return self.x == other.x and self.y == other.y and self.z == other.z
@@ -108,9 +111,28 @@ class Vec:
             value1 = Vec(value1)
         return Vec(random.uniform(value1.x, value2.x), random.uniform(value1.y, value2.y), random.uniform(value1.z, value2.z))
 
+    def min(self, minimum):
+        """
+        Get a new vector containing the minimum value for each value in the two vectors.
+
+        :param float or Vec minimum: Minimum value, floats are converted to Vec
+        """
+        minimum = Vec(minimum)
+        return Vec(min(self.x, minimum.x), min(self.y, minimum.y), min(self.z, minimum.z))
+
+    def max(self, maximum):
+        """
+        Get a new vector containing the maximum value for each value in the two vectors.
+
+        :param float or Vec maximum: Minimum value, floats are converted to Vec
+        """
+        maximum = Vec(maximum)
+        return Vec(max(self.x, maximum.x), max(self.y, maximum.y), max(self.z, maximum.z))
+
     def clamp(self, minimum, maximum):
         """
-        Get this vector clamped between two values.
+        Get this vector clamped between two values as a new vector.
+
         :param float or Vec minimum: Minimum value, floats are converted to Vec
         :param float or Vec maximum: Maximum value, floats are converted to Vec
         """
