@@ -68,6 +68,12 @@ class Vec2:
         else:
             raise TypeError(f"{other} is not a number or vec2")
 
+    def __lt__(self, other):
+        return self.x < other.x and self.y < other.y
+
+    def __gt__(self, other):
+        return self.x > other.x and self.y > other.y
+
     def length(self):
         """
         Get the length of this vector using pythagorean theorem

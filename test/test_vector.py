@@ -171,7 +171,17 @@ class VecTest(unittest.TestCase):
         self.assertEqual("#ff0000", Vec(300, -2, -100).hex())
         self.assertEqual("#ff1632", Vec(255, 22, 50).hex())
 
+    def test_lessThan(self):
+        self.assertEqual(True, Vec(10) < Vec(11))
+        self.assertEqual(True, Vec(10, 10, 10) < Vec(11, 15, 14))
+        self.assertEqual(False, Vec(10, 10, 10) < Vec(9, 15, 14))
+        self.assertEqual(False, Vec(10, 10, 10) < Vec(9, 9, 9))
 
+    def test_greaterThan(self):
+        self.assertEqual(False, Vec(10) > Vec(11))
+        self.assertEqual(False, Vec(10, 10, 10) > Vec(11, 15, 14))
+        self.assertEqual(False, Vec(10, 10, 10) > Vec(9, 15, 14))
+        self.assertEqual(True, Vec(10, 10, 10) > Vec(9, 9, 9))
 
 
 

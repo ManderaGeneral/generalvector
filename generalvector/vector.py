@@ -74,6 +74,12 @@ class Vec:
         else:
             raise TypeError(f"{other} is not a number or vec")
 
+    def __lt__(self, other):
+        return self.x < other.x and self.y < other.y and self.z < other.z
+
+    def __gt__(self, other):
+        return self.x > other.x and self.y > other.y and self.z > other.z
+
     def length(self):
         """
         Get the length of this vector using pythagorean theorem
