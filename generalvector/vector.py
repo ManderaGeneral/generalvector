@@ -159,30 +159,28 @@ class Vec:
         rounded = self.round().clamp(0, 255)
         return f"#{'%02x' % rounded.x}{'%02x' % rounded.y}{'%02x' % rounded.z}"
 
-    def range(self, maximum):
+    def range(self, size):
         """
-        Get a range from two vectors to iterate each integer position between them.
-        Self contains lowest values.
+        Get a range from two vectors.
+        Self is upper left corner.
+        A size of Vec(1, 1) will return 1 Vec.
 
-        :param Vec maximum: Highest values.
+        :param Vec size: Size of range.
         :rtype: list[Vec]
         """
         if self != self.round():
             raise ValueError(f"self {self} has decimals")
-        if maximum != maximum.round():
-            raise ValueError(f"maximum {maximum} has decimals")
-        if not self <= maximum:
-            raise ValueError(f"{maximum} is not bigger than or equal to {self}")
+        if size != size.round():
+            raise ValueError(f"maximum {size} has decimals")
+        if not size >= Vec(0):
+            raise ValueError(f"{size} has atleast one negative value")
 
-        diff = maximum - self
         rangeList = []
-        for z in range(diff.z + 1):
-            for y in range(diff.y + 1):
-                for x in range(diff.x + 1):
+        for z in range(size.z):
+            for y in range(size.y):
+                for x in range(size.x):
                     rangeList.append(self + Vec(x, y, z))
         return rangeList
-
-
 
 
 

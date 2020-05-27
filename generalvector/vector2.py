@@ -145,25 +145,25 @@ class Vec2:
         maximum = Vec2(maximum)
         return Vec2(clamp(self.x, minimum.x, maximum.x), clamp(self.y, minimum.y, maximum.y))
 
-    def range(self, maximum):
+    def range(self, size):
         """
-        Get a range from two vectors to iterate each integer position between them.
+        Get a range from two vector2s.
         Self is upper left corner.
+        A size of Vec2(1, 1) will return 1 Vec2.
 
-        :param Vec2 maximum: Lower right corner.
+        :param Vec2 size: Size of range.
         :rtype: list[Vec2]
         """
         if self != self.round():
             raise ValueError(f"self {self} has decimals")
-        if maximum != maximum.round():
-            raise ValueError(f"maximum {maximum} has decimals")
-        if not self <= maximum:
-            raise ValueError(f"{maximum} is not bigger than or equal to {self}")
+        if size != size.round():
+            raise ValueError(f"maximum {size} has decimals")
+        if not size >= Vec2(0):
+            raise ValueError(f"{size} has atleast one negative value")
 
-        diff = maximum - self
         rangeList = []
-        for y in range(diff.y + 1):
-            for x in range(diff.x + 1):
+        for y in range(size.y):
+            for x in range(size.x):
                 rangeList.append(self + Vec2(x, y))
         return rangeList
 

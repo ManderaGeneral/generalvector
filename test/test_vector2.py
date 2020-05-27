@@ -175,11 +175,19 @@ class Vec2Test(unittest.TestCase):
         self.assertEqual(False, Vec2(4) >= Vec2(5))
 
     def test_range(self):
-        self.assertEqual([Vec2(0, 0)], Vec2(0, 0).range(Vec2(0, 0)))
-        self.assertEqual([Vec2(0, 0), Vec2(1, 0), Vec2(0, 1), Vec2(1, 1)], Vec2(0, 0).range(Vec2(1, 1)))
-        self.assertEqual([Vec2(-1, 0), Vec2(0, 0), Vec2(-1, 1), Vec2(0, 1)], Vec2(-1, 0).range(Vec2(0, 1)))
+        self.assertRaises(ValueError, Vec2(0, -1).range, Vec2(-1, -1))
+        self.assertRaises(ValueError, Vec2(0, -1).range, Vec2(-1, 1))
+        self.assertRaises(ValueError, Vec2(0, -1.2).range, Vec2(1, 1))
+        self.assertRaises(ValueError, Vec2(0, 0).range, Vec2(1, 1.1))
+
+        self.assertEqual([Vec2(0, 0)], Vec2(0, 0).range(Vec2(1, 1)))
+        self.assertEqual([Vec2(0, 0), Vec2(1, 0), Vec2(0, 1), Vec2(1, 1)], Vec2(0, 0).range(Vec2(2, 2)))
+        self.assertEqual([Vec2(-1, 0), Vec2(0, 0), Vec2(-1, 1), Vec2(0, 1)], Vec2(-1, 0).range(Vec2(2, 2)))
         self.assertEqual([Vec2(1, 1), Vec2(2, 1), Vec2(3, 1)], Vec2(1, 1).range(Vec2(3, 1)))
-        self.assertEqual([Vec2(0, -1), Vec2(0), Vec2(0, 1)], Vec2(0, -1).range(Vec2(0, 1)))
+        self.assertEqual([Vec2(0, -1), Vec2(0), Vec2(0, 1)], Vec2(0, -1).range(Vec2(1, 3)))
+        self.assertEqual([], Vec2(0, -1).range(Vec2(0, 3)))
+        self.assertEqual([], Vec2(0, -1).range(Vec2(2, 0)))
+        self.assertEqual([], Vec2(0, -1).range(Vec2(0, 0)))
 
 
 
