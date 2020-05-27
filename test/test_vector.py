@@ -173,17 +173,38 @@ class VecTest(unittest.TestCase):
 
     def test_lessThan(self):
         self.assertEqual(True, Vec(10) < Vec(11))
+        self.assertEqual(False, Vec(10) < Vec(10))
         self.assertEqual(True, Vec(10, 10, 10) < Vec(11, 15, 14))
         self.assertEqual(False, Vec(10, 10, 10) < Vec(9, 15, 14))
+        self.assertEqual(False, Vec(10, 10, 10) < Vec(10, 15, 14))
         self.assertEqual(False, Vec(10, 10, 10) < Vec(9, 9, 9))
 
     def test_greaterThan(self):
         self.assertEqual(False, Vec(10) > Vec(11))
+        self.assertEqual(False, Vec(10) > Vec(10))
         self.assertEqual(False, Vec(10, 10, 10) > Vec(11, 15, 14))
         self.assertEqual(False, Vec(10, 10, 10) > Vec(9, 15, 14))
+        self.assertEqual(False, Vec(10, 10, 10) > Vec(10, 5, 4))
         self.assertEqual(True, Vec(10, 10, 10) > Vec(9, 9, 9))
 
+    def test_lessThanOrEqual(self):
+        self.assertEqual(True, Vec(5) <= Vec(5))
+        self.assertEqual(True, Vec(4) <= Vec(5))
+        self.assertEqual(False, Vec(6) <= Vec(5))
+        self.assertEqual(True, Vec(10, 10, 10) <= Vec(10, 15, 14))
 
+    def test_greaterThanOrEqual(self):
+        self.assertEqual(True, Vec(5) >= Vec(5))
+        self.assertEqual(True, Vec(6) >= Vec(5))
+        self.assertEqual(False, Vec(4) >= Vec(5))
+        self.assertEqual(True, Vec(10, 10, 10) >= Vec(10, 9, 7))
+
+    def test_range(self):
+        self.assertEqual([Vec(0, 0, 0)], Vec(0, 0, 0).range(Vec(0, 0, 0)))
+        self.assertEqual([Vec(0, 0, 0), Vec(1, 0, 0)], Vec(0, 0, 0).range(Vec(1, 0, 0)))
+        self.assertEqual([Vec(0, 0, 0), Vec(0, 1, 0), Vec(0, 0, 1), Vec(0, 1, 1)], Vec(0, 0, 0).range(Vec(0, 1, 1)))
+        self.assertEqual([Vec(0, 1, 0), Vec(0, 2, 0), Vec(0, 3, 0)], Vec(0, 1, 0).range(Vec(0, 3, 0)))
+        self.assertEqual([Vec(2, 2, 2), Vec(3, 2, 2), Vec(2, 3, 2), Vec(3, 3, 2), Vec(2, 2, 3), Vec(3, 2, 3), Vec(2, 3, 3), Vec(3, 3, 3)], Vec(2).range(Vec(3)))
 
 
 

@@ -31,7 +31,7 @@ class Vec:
         self.z = z
 
     def __str__(self):
-        return f"Vec[{self.x}, {self.y}, {self.z}]"
+        return f"Vec({self.x}, {self.y}, {self.z})"
 
     def __repr__(self):
         return self.__str__()
@@ -79,6 +79,12 @@ class Vec:
 
     def __gt__(self, other):
         return self.x > other.x and self.y > other.y and self.z > other.z
+
+    def __le__(self, other):
+        return self.x <= other.x and self.y <= other.y and self.z <= other.z
+
+    def __ge__(self, other):
+        return self.x >= other.x and self.y >= other.y and self.z >= other.z
 
     def length(self):
         """
@@ -153,7 +159,28 @@ class Vec:
         rounded = self.round().clamp(0, 255)
         return f"#{'%02x' % rounded.x}{'%02x' % rounded.y}{'%02x' % rounded.z}"
 
+    def range(self, maximum):
+        """
+        Get a range from two vectors to iterate each integer position between them.
+        Self contains lowest values.
 
+        :param Vec maximum: Highest values.
+        :rtype: list[Vec]
+        """
+        if self != self.round():
+            raise ValueError(f"self {self} has decimals")
+        if maximum != maximum.round():
+            raise ValueError(f"maximum {maximum} has decimals")
+        if not self <= maximum:
+            raise ValueError(f"{maximum} is not bigger than or equal to {self}")
+
+        diff = maximum - self
+        rangeList = []
+        for z in range(diff.z + 1):
+            for y in range(diff.y + 1):
+                for x in range(diff.x + 1):
+                    rangeList.append(self + Vec(x, y, z))
+        return rangeList
 
 
 

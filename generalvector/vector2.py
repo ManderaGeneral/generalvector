@@ -25,7 +25,7 @@ class Vec2:
         self.y = y
 
     def __str__(self):
-        return f"Vec2[{self.x}, {self.y}]"
+        return f"Vec2({self.x}, {self.y})"
 
     def __repr__(self):
         return self.__str__()
@@ -73,6 +73,12 @@ class Vec2:
 
     def __gt__(self, other):
         return self.x > other.x and self.y > other.y
+
+    def __le__(self, other):
+        return self.x <= other.x and self.y <= other.y
+
+    def __ge__(self, other):
+        return self.x >= other.x and self.y >= other.y
 
     def length(self):
         """
@@ -139,10 +145,27 @@ class Vec2:
         maximum = Vec2(maximum)
         return Vec2(clamp(self.x, minimum.x, maximum.x), clamp(self.y, minimum.y, maximum.y))
 
+    def range(self, maximum):
+        """
+        Get a range from two vectors to iterate each integer position between them.
+        Self is upper left corner.
 
+        :param Vec2 maximum: Lower right corner.
+        :rtype: list[Vec2]
+        """
+        if self != self.round():
+            raise ValueError(f"self {self} has decimals")
+        if maximum != maximum.round():
+            raise ValueError(f"maximum {maximum} has decimals")
+        if not self <= maximum:
+            raise ValueError(f"{maximum} is not bigger than or equal to {self}")
 
-
-
+        diff = maximum - self
+        rangeList = []
+        for y in range(diff.y + 1):
+            for x in range(diff.x + 1):
+                rangeList.append(self + Vec2(x, y))
+        return rangeList
 
 
 
