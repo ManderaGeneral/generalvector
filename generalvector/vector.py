@@ -182,7 +182,13 @@ class Vec:
                     rangeList.append(self + Vec(x, y, z))
         return rangeList
 
+    def distance(self, other):
+        """
+        Return distance between two Vectors
 
+        :param other: Another Vec
+        """
+        return (self - other).length()
 
 
 

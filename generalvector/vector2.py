@@ -167,8 +167,13 @@ class Vec2:
                 rangeList.append(self + Vec2(x, y))
         return rangeList
 
+    def distance(self, other):
+        """
+        Return distance between two Vector2s
 
-
+        :param other: Another Vec2
+        """
+        return (self - other).length()
 
 
 

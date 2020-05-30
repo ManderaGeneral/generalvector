@@ -216,6 +216,14 @@ class VecTest(unittest.TestCase):
         self.assertEqual([], Vec(2).range(Vec(1, 3, 0)))
         self.assertEqual([], Vec(2).range(Vec(0, 0, 0)))
 
+    def test_distance(self):
+        self.assertEqual(5, Vec(10, 5, 0).distance(Vec(15, 5, 0)))
+        self.assertEqual(5, Vec(10, 5, 0).distance(Vec(5, 5, 0)))
+        self.assertEqual(0, Vec(10, 5, 0).distance(Vec(10, 5, 0)))
+        self.assertEqual(2, Vec(-2, 0, 0).distance(Vec(0, 0, 0)))
+        self.assertEqual(2, Vec(0, 0, 0).distance(Vec(-2, 0, 0)))
+        self.assertEqual(2, Vec(0, 0, 2).distance(Vec(0, 0, 0)))
+
 
 
 
