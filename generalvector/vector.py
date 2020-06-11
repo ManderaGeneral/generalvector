@@ -152,6 +152,15 @@ class Vec:
         maximum = Vec(maximum)
         return Vec(clamp(self.x, minimum.x, maximum.x), clamp(self.y, minimum.y, maximum.y), clamp(self.z, minimum.z, maximum.z))
 
+    def inrange(self, minimum, maximum):
+        """
+        Return whether this vector is between two other vectors
+
+        :param float or Vec minimum: Minimum value, floats are converted to Vec
+        :param float or Vec maximum: Maximum value, floats are converted to Vec
+        """
+        return self.clamp(minimum, maximum) == self
+
     def hex(self):
         """
         Get a hex based on each value. Rounded and clamped between 0 and 255.

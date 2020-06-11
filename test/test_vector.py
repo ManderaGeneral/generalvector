@@ -165,6 +165,19 @@ class VecTest(unittest.TestCase):
         self.assertEqual(Vec(-3, 2, 1), Vec(0).clamp(Vec(-3, 2, 1), Vec(-3, 2, 1)))
         self.assertEqual(Vec(-3, 2, 1), Vec(0).clamp(Vec(-30, 2, 1), Vec(-3, 20, 10)))
 
+    def test_inrange(self):
+        self.assertEqual(True, Vec(5).inrange(Vec(4), Vec(6)))
+        self.assertEqual(True, Vec(5).inrange(Vec(5), Vec(5)))
+        self.assertEqual(True, Vec(2, 3, 4).inrange(Vec(1, 2, 3), Vec(5)))
+
+        self.assertEqual(False, Vec(2, 3, 4).inrange(Vec(1, 2, 3), Vec(5, 5, 3)))
+        self.assertEqual(False, Vec(2, 3, 4).inrange(Vec(1, 2, 3), Vec(5, 2, 5)))
+        self.assertEqual(False, Vec(2, 3, 4).inrange(Vec(1, 2, 3), Vec(1, 5, 5)))
+
+        self.assertEqual(False, Vec(2, 3, 4).inrange(Vec(3, 2, 3), Vec(5)))
+        self.assertEqual(False, Vec(2, 3, 4).inrange(Vec(1, 4, 3), Vec(5)))
+        self.assertEqual(False, Vec(2, 3, 4).inrange(Vec(1, 2, 5), Vec(5)))
+
     def test_hex(self):
         self.assertEqual("#c8c800", Vec(200, 200, 0).hex())
         self.assertEqual("#ff0000", Vec(255, 0, 0).hex())

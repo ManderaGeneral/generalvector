@@ -148,6 +148,17 @@ class Vec2Test(unittest.TestCase):
         self.assertEqual(Vec2(-3, 2), Vec2(0).clamp(Vec2(-3, 2), Vec2(-3, 2)))
         self.assertEqual(Vec2(-3, 2), Vec2(0).clamp(Vec2(-30, 2), Vec2(-3, 20)))
 
+    def test_inrange(self):
+        self.assertEqual(True, Vec2(5).inrange(Vec2(4), Vec2(6)))
+        self.assertEqual(True, Vec2(5).inrange(Vec2(5), Vec2(5)))
+        self.assertEqual(True, Vec2(2, 3).inrange(Vec2(1, 2), Vec2(5)))
+
+        self.assertEqual(False, Vec2(2, 3).inrange(Vec2(1, 2), Vec2(5, 2)))
+        self.assertEqual(False, Vec2(2, 3).inrange(Vec2(1, 2), Vec2(1, 5)))
+
+        self.assertEqual(False, Vec2(2, 3).inrange(Vec2(3, 2), Vec2(5)))
+        self.assertEqual(False, Vec2(2, 3).inrange(Vec2(1, 4), Vec2(5)))
+
     def test_lessThan(self):
         self.assertEqual(True, Vec2(10) < Vec2(11))
         self.assertEqual(True, Vec2(10, 10) < Vec2(11, 15))

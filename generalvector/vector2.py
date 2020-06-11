@@ -145,6 +145,15 @@ class Vec2:
         maximum = Vec2(maximum)
         return Vec2(clamp(self.x, minimum.x, maximum.x), clamp(self.y, minimum.y, maximum.y))
 
+    def inrange(self, minimum, maximum):
+        """
+        Return whether this vector2 is between two other vector2s
+
+        :param float or Vec2 minimum: Minimum value, floats are converted to Vec2
+        :param float or Vec2 maximum: Maximum value, floats are converted to Vec2
+        """
+        return self.clamp(minimum, maximum) == self
+
     def range(self, size):
         """
         Get a range from two vector2s.
