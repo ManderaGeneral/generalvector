@@ -239,6 +239,13 @@ class VecTest(unittest.TestCase):
 
 
 
+    def test_confineTo(self):
+        self.assertEqual(Vec(1, 1, 1), Vec(11, 11, 11).confineTo(Vec(0, 0, 0), Vec(10, 10, 10)))
+        self.assertEqual(Vec(1, 1, 1), Vec(11, 11, 11).confineTo(Vec(-1, 0, 0), Vec(10, 10, 10)))
+        self.assertEqual(Vec(2, 7, 5), Vec(22, -13, 5).confineTo(Vec(0, 0, 0), Vec(10, 10, 10)))
+
+
+
 
 
 

@@ -5,10 +5,12 @@ import random
 
 from generallibrary.values import clamp
 
+from generalvector.general import General
 
-class Vec:
+
+class Vec(General):
     """
-    Immutable vector2
+    Immutable vector
     """
     def __init__(self, x, y=None, z=None):
         if isinstance(x, Vec):
@@ -22,9 +24,7 @@ class Vec:
             else:
                 raise AttributeError(f"X and Y were defined but not Z, either only X should be defined or all three")
 
-        for key, value in {"x": x, "y": y, "z": z}.items():
-            if not isinstance(value, (int, float)):
-                raise TypeError(f"{key} value {value} is not a number")
+        General.__init__(self, x, y, z)
 
         self.x = x
         self.y = y
@@ -37,20 +37,12 @@ class Vec:
         return self.__str__()
 
     def __eq__(self, other):
-        if isinstance(other, Vec):
-            return self.x == other.x and self.y == other.y and self.z == other.z
-        elif isinstance(other, (int, float)):
-            return self.x == other and self.y == other and self.z == other
-        else:
-            raise TypeError(f"{other} is not a Vec or number")
+        other = Vec(other)
+        return self.x == other.x and self.y == other.y and self.z == other.z
 
     def __add__(self, other):
-        if isinstance(other, Vec):
-            return Vec(self.x + other.x, self.y + other.y, self.z + other.z)
-        elif isinstance(other, (int, float)):
-            return Vec(self.x + other, self.y + other, self.z + other)
-        else:
-            raise TypeError(f"{other} is not a Vec or number")
+        other = Vec(other)
+        return Vec(self.x + other.x, self.y + other.y, self.z + other.z)
 
     def __neg__(self):
         return Vec(-self.x, -self.y, -self.z)
@@ -59,31 +51,27 @@ class Vec:
         return self + -other
 
     def __mul__(self, other):
-        if isinstance(other, Vec):
-            return Vec(self.x * other.x, self.y * other.y, self.z * other.z)
-        if isinstance(other, (int, float)):
-            return Vec(self.x * other, self.y * other, self.z * other)
-        else:
-            raise TypeError(f"{other} is not a number or vec")
+        other = Vec(other)
+        return Vec(self.x * other.x, self.y * other.y, self.z * other.z)
 
     def __truediv__(self, other):
-        if isinstance(other, Vec):
-            return Vec(self.x / other.x, self.y / other.y, self.z / other.z)
-        if isinstance(other, (int, float)):
-            return Vec(self.x / other, self.y / other, self.z / other)
-        else:
-            raise TypeError(f"{other} is not a number or vec")
+        other = Vec(other)
+        return Vec(self.x / other.x, self.y / other.y, self.z / other.z)
 
     def __lt__(self, other):
+        other = Vec(other)
         return self.x < other.x and self.y < other.y and self.z < other.z
 
     def __gt__(self, other):
+        other = Vec(other)
         return self.x > other.x and self.y > other.y and self.z > other.z
 
     def __le__(self, other):
+        other = Vec(other)
         return self.x <= other.x and self.y <= other.y and self.z <= other.z
 
     def __ge__(self, other):
+        other = Vec(other)
         return self.x >= other.x and self.y >= other.y and self.z >= other.z
 
     def length(self):
@@ -177,12 +165,8 @@ class Vec:
         :param Vec size: Size of range.
         :rtype: list[Vec]
         """
-        if self != self.round():
-            raise ValueError(f"self {self} has decimals")
-        if size != size.round():
-            raise ValueError(f"maximum {size} has decimals")
-        if not size >= Vec(0):
-            raise ValueError(f"{size} has atleast one negative value")
+        self.sanitize(ints=True)
+        size = Vec(size).sanitize(ints=True, positiveOrZero=True)
 
         rangeList = []
         for z in range(size.z):

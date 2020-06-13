@@ -33,12 +33,9 @@ class Vec2Test(unittest.TestCase):
 
         self.assertTrue(Vec2(5.2, 5.2) != 5)
 
-
-
     def test_add(self):
         self.assertRaises(TypeError, Vec2.__add__, "")
         self.assertRaises(TypeError, Vec2.__add__, False)
-
 
         self.assertEqual(Vec2(5, 2) + Vec2(2, 4), Vec2(7, 6))
         self.assertEqual(Vec2(5, 2) + Vec2(2.5, 4.5), Vec2(7.5, 6.5))
@@ -209,6 +206,10 @@ class Vec2Test(unittest.TestCase):
 
 
 
+    def test_confineTo(self):
+        self.assertEqual(Vec2(1, 1), Vec2(11, 11).confineTo(Vec2(0, 0), Vec2(10, 10)))
+        self.assertEqual(Vec2(1, 1), Vec2(11, 11).confineTo(Vec2(-1, 0), Vec2(10, 10)))
+        self.assertEqual(Vec2(2, 7), Vec2(22, -13).confineTo(Vec2(0, 0), Vec2(10, 10)))
 
 
 

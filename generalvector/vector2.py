@@ -5,8 +5,10 @@ import random
 
 from generallibrary.values import clamp
 
+from generalvector.general import General
 
-class Vec2:
+
+class Vec2(General):
     """
     Immutable vector2
     """
@@ -17,9 +19,7 @@ class Vec2:
         elif y is None:
             y = x
 
-        for key, value in {"x": x, "y": y}.items():
-            if not isinstance(value, (int, float)):
-                raise TypeError(f"{key} value {value} is not a number")
+        General.__init__(self, x, y)
 
         self.x = x
         self.y = y
@@ -31,53 +31,43 @@ class Vec2:
         return self.__str__()
 
     def __eq__(self, other):
-        if isinstance(other, Vec2):
-            return self.x == other.x and self.y == other.y
-        elif isinstance(other, (int, float)):
-            return self.x == other and self.y == other
-        else:
-            raise TypeError(f"{other} is not a Vec2 or number")
+        other = Vec2(other)
+        return self.x == other.x and self.y == other.y
 
     def __add__(self, other):
-        if isinstance(other, Vec2):
-            return Vec2(self.x + other.x, self.y + other.y)
-        elif isinstance(other, (int, float)):
-            return Vec2(self.x + other, self.y + other)
-        else:
-            raise TypeError(f"{other} is not a Vec2 or number")
+        other = Vec2(other)
+        return Vec2(self.x + other.x, self.y + other.y)
 
     def __neg__(self):
         return Vec2(-self.x, -self.y)
 
     def __sub__(self, other):
+        other = Vec2(other)
         return self + -other
 
     def __mul__(self, other):
-        if isinstance(other, Vec2):
-            return Vec2(self.x * other.x, self.y * other.y)
-        if isinstance(other, (int, float)):
-            return Vec2(self.x * other, self.y * other)
-        else:
-            raise TypeError(f"{other} is not a number or vec2")
+        other = Vec2(other)
+        return Vec2(self.x * other.x, self.y * other.y)
 
     def __truediv__(self, other):
-        if isinstance(other, Vec2):
-            return Vec2(self.x / other.x, self.y / other.y)
-        if isinstance(other, (int, float)):
-            return Vec2(self.x / other, self.y / other)
-        else:
-            raise TypeError(f"{other} is not a number or vec2")
+        other = Vec2(other)
+        """:param float or Vec2 other:"""
+        return Vec2(self.x / other.x, self.y / other.y)
 
     def __lt__(self, other):
+        other = Vec2(other)
         return self.x < other.x and self.y < other.y
 
     def __gt__(self, other):
+        other = Vec2(other)
         return self.x > other.x and self.y > other.y
 
     def __le__(self, other):
+        other = Vec2(other)
         return self.x <= other.x and self.y <= other.y
 
     def __ge__(self, other):
+        other = Vec2(other)
         return self.x >= other.x and self.y >= other.y
 
     def length(self):
@@ -152,6 +142,8 @@ class Vec2:
         :param float or Vec2 minimum: Minimum value, floats are converted to Vec2
         :param float or Vec2 maximum: Maximum value, floats are converted to Vec2
         """
+        minimum = Vec2(minimum)
+        maximum = Vec2(maximum)
         return self.clamp(minimum, maximum) == self
 
     def range(self, size):
@@ -163,12 +155,8 @@ class Vec2:
         :param Vec2 size: Size of range.
         :rtype: list[Vec2]
         """
-        if self != self.round():
-            raise ValueError(f"self {self} has decimals")
-        if size != size.round():
-            raise ValueError(f"maximum {size} has decimals")
-        if not size >= Vec2(0):
-            raise ValueError(f"{size} has atleast one negative value")
+        self.sanitize(ints=True)
+        size = Vec2(size).sanitize(ints=True, positiveOrZero=True)
 
         rangeList = []
         for y in range(size.y):
