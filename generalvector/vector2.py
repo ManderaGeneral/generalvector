@@ -31,8 +31,11 @@ class Vec2(General):
         return self.__str__()
 
     def __eq__(self, other):
-        other = Vec2(other)
-        return self.x == other.x and self.y == other.y
+        try:
+            other = Vec2(other)
+            return self.x == other.x and self.y == other.y
+        except:
+            return False
 
     def __add__(self, other):
         other = Vec2(other)

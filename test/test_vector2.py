@@ -33,6 +33,9 @@ class Vec2Test(unittest.TestCase):
 
         self.assertTrue(Vec2(5.2, 5.2) != 5)
 
+        self.assertFalse(Vec2(5.2, 5.2) is None)
+        self.assertFalse(Vec2(5.2, 5.2) == "test")
+
     def test_add(self):
         self.assertRaises(TypeError, Vec2.__add__, "")
         self.assertRaises(TypeError, Vec2.__add__, False)

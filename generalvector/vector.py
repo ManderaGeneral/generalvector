@@ -37,8 +37,11 @@ class Vec(General):
         return self.__str__()
 
     def __eq__(self, other):
-        other = Vec(other)
-        return self.x == other.x and self.y == other.y and self.z == other.z
+        try:
+            other = Vec(other)
+            return self.x == other.x and self.y == other.y and self.z == other.z
+        except:
+            return False
 
     def __add__(self, other):
         other = Vec(other)
