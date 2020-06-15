@@ -3,7 +3,7 @@ from math import sqrt
 
 import random
 
-from generallibrary.values import clamp
+from generallibrary.values import clamp, inrange
 
 from generalvector.general import General
 
@@ -150,7 +150,7 @@ class Vec(General):
         :param float or Vec minimum: Minimum value, floats are converted to Vec
         :param float or Vec maximum: Maximum value, floats are converted to Vec
         """
-        return self.clamp(minimum, maximum) == self
+        return inrange(self.x, minimum.x, maximum.x) and inrange(self.y, minimum.y, maximum.y) and inrange(self.z, minimum.z, maximum.z)
 
     def hex(self):
         """

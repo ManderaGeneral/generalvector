@@ -3,7 +3,7 @@ from math import sqrt
 
 import random
 
-from generallibrary.values import clamp
+from generallibrary.values import clamp, inrange
 
 from generalvector.general import General
 
@@ -147,7 +147,7 @@ class Vec2(General):
         """
         minimum = Vec2(minimum)
         maximum = Vec2(maximum)
-        return self.clamp(minimum, maximum) == self
+        return inrange(self.x, minimum.x, maximum.x) and inrange(self.y, minimum.y, maximum.y)
 
     def range(self, size):
         """
