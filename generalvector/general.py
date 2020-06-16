@@ -48,7 +48,10 @@ class General:
         if maximum and not self <= maximum:
             raise ValueError(f"{self} failed 'maximum' sanitizing")
 
-        return self
+        if ints:
+            return self.round()
+        else:
+            return self
 
     def confineTo(self, pos, size, margin=0):
         """
