@@ -240,12 +240,33 @@ class VecTest(unittest.TestCase):
         self.assertEqual(2, Vec(0, 0, 0).distance(Vec(-2, 0, 0)))
         self.assertEqual(2, Vec(0, 0, 2).distance(Vec(0, 0, 0)))
 
+    def test_sanitize(self):
+        self.assertRaises(ValueError, Vec(0.5).sanitize, ints=True)
+        self.assertRaises(ValueError, Vec(0).sanitize, positive=True)
+        self.assertRaises(ValueError, Vec(-1).sanitize, positive=True)
+        self.assertRaises(ValueError, Vec(-1).sanitize, positiveOrZero=True)
+        self.assertRaises(ValueError, Vec(0).sanitize, negative=True)
+        self.assertRaises(ValueError, Vec(1).sanitize, negative=True)
+        self.assertRaises(ValueError, Vec(1).sanitize, negativeOrZero=True)
+        self.assertRaises(ValueError, Vec(1).sanitize, minimum=Vec(2))
+        self.assertRaises(ValueError, Vec(1).sanitize, maximum=Vec(0))
 
+        self.assertTrue(Vec(1).sanitize(ints=True))
+        self.assertTrue(Vec(1).sanitize(positive=True))
+        self.assertTrue(Vec(0).sanitize(positiveOrZero=True))
+        self.assertTrue(Vec(1).sanitize(positiveOrZero=True))
+        self.assertTrue(Vec(-1).sanitize(negative=True))
+        self.assertTrue(Vec(0).sanitize(negativeOrZero=True))
+        self.assertTrue(Vec(-1).sanitize(negativeOrZero=True))
+        self.assertTrue(Vec(1).sanitize(minimum=Vec(1)))
+        self.assertTrue(Vec(1).sanitize(maximum=Vec(1)))
 
     def test_confineTo(self):
         self.assertEqual(Vec(1, 1, 1), Vec(11, 11, 11).confineTo(Vec(0, 0, 0), Vec(10, 10, 10)))
         self.assertEqual(Vec(1, 1, 1), Vec(11, 11, 11).confineTo(Vec(-1, 0, 0), Vec(10, 10, 10)))
         self.assertEqual(Vec(2, 7, 5), Vec(22, -13, 5).confineTo(Vec(0, 0, 0), Vec(10, 10, 10)))
+
+        self.assertEqual(Vec(0), Vec(2).confineTo(Vec(0), Vec(1), margin=0.5))
 
 
 

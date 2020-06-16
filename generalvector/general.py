@@ -50,19 +50,20 @@ class General:
 
         return self
 
-    def confineTo(self, pos, size):
+    def confineTo(self, pos, size, margin=0):
         """
         Confine this vector to an area, but unlike clamp it subtracts axis * n to create an 'infinite' area effect.
 
         :param generalvector.Vec or generalvector.Vec2 self:
         :param generalvector.Vec or generalvector.Vec2 pos: Lowest point of area
         :param generalvector.Vec or generalvector.Vec2 size: Size of area, has to be positive
+        :param float margin: Margin of confinement
         """
         pos = self.__class__(pos)
         size = self.__class__(size).sanitize(positive=True)
         maximum = pos + size
 
-        return self.__class__(*(confineTo(axis, pos[i], maximum[i]) for i, axis in enumerate(self.axis)))
+        return self.__class__(*[confineTo(axis, pos[i], maximum[i], margin) for i, axis in enumerate(self.axis)])
 
 
 
