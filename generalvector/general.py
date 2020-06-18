@@ -71,6 +71,8 @@ class General:
     def absolute(self):
         """
         Return this vector with absolute values
+
+        :param generalvector.Vec or generalvector.Vec2 self:
         """
         return self.__class__(*[abs(axis) for axis in self.axis])
 
