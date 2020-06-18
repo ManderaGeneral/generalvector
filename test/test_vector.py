@@ -268,6 +268,13 @@ class VecTest(unittest.TestCase):
 
         self.assertEqual(Vec(0), Vec(2).confineTo(Vec(0), Vec(1), margin=0.5))
 
+    def test_absolute(self):
+        self.assertEqual(Vec(1, 2, 3), Vec(1, 2, 3).absolute())
+        self.assertEqual(Vec(1, 2, 3), Vec(-1, 2, 3).absolute())
+        self.assertEqual(Vec(1, 2, 3), Vec(1, -2, 3).absolute())
+        self.assertEqual(Vec(1, 2, 3), Vec(1, 2, -3).absolute())
+        self.assertEqual(Vec(1, 2, 3), Vec(-1, -2, -3).absolute())
+        self.assertEqual(Vec(1.1, 2, 3), Vec(-1.1, -2, -3).absolute())
 
 
 

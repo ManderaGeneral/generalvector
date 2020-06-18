@@ -68,7 +68,11 @@ class General:
 
         return self.__class__(*[confineTo(axis, pos[i], maximum[i], margin) for i, axis in enumerate(self.axis)])
 
-
+    def absolute(self):
+        """
+        Return this vector with absolute values
+        """
+        return self.__class__(*[abs(axis) for axis in self.axis])
 
 
 
