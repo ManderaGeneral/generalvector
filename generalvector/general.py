@@ -59,11 +59,11 @@ class General:
 
         :param generalvector.Vec or generalvector.Vec2 self:
         :param generalvector.Vec or generalvector.Vec2 pos: Lowest point of area
-        :param generalvector.Vec or generalvector.Vec2 size: Size of area, has to be positive
+        :param generalvector.Vec or generalvector.Vec2 size: Size of area, has to be positive or zero
         :param float margin: Margin of confinement
         """
         pos = self.__class__(pos)
-        size = self.__class__(size).sanitize(positive=True)
+        size = self.__class__(size).sanitize(positiveOrZero=True)
         maximum = pos + size
 
         return self.__class__(*[confineTo(axis, pos[i], maximum[i], margin) for i, axis in enumerate(self.axis)])
