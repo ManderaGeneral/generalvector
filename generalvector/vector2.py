@@ -12,17 +12,11 @@ class Vec2(General):
     """
     Immutable vector2
     """
-    def __init__(self, x, y=None):
-        if isinstance(x, Vec2):
-            y = x.y
-            x = x.x
-        elif y is None:
-            y = x
+    def __init__(self, x=None, y=None):
+        General.__init__(self, x, y, length=2)
 
-        General.__init__(self, x, y)
-
-        self.x = x
-        self.y = y
+        self.x = self.axis[0]
+        self.y = self.axis[1]
 
     def __str__(self):
         return f"Vec2({self.x}, {self.y})"

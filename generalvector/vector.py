@@ -12,23 +12,12 @@ class Vec(General):
     """
     Immutable vector
     """
-    def __init__(self, x, y=None, z=None):
-        if isinstance(x, Vec):
-            z = x.z
-            y = x.y
-            x = x.x
-        elif z is None:
-            if y is None:
-                y = x
-                z = x
-            else:
-                raise AttributeError(f"X and Y were defined but not Z, either only X should be defined or all three")
+    def __init__(self, x=None, y=None, z=None):
+        General.__init__(self, x, y, z, length=3)
 
-        General.__init__(self, x, y, z)
-
-        self.x = x
-        self.y = y
-        self.z = z
+        self.x = self.axis[0]
+        self.y = self.axis[1]
+        self.z = self.axis[2]
 
     def __str__(self):
         return f"Vec({self.x}, {self.y}, {self.z})"

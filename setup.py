@@ -18,7 +18,7 @@ setup(
         "Simple immutable vectors."
     ),
     packages=find_packages(),
-    install_requires=["wheel"],
+    install_requires=["wheel", "generallibrary"],
     classifiers=[
         "Operating System :: Microsoft :: Windows :: Windows 7",
         "Programming Language :: Python :: 3.8",
