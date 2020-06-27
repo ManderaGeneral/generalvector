@@ -4,6 +4,7 @@ from math import sqrt
 import random
 
 from generallibrary.values import clamp, inrange
+from generallibrary.types import typeChecker
 
 from generalvector.general import General
 
@@ -26,6 +27,9 @@ class Vec(General):
         return self.__str__()
 
     def __eq__(self, other):
+        if not typeChecker(other, [float, General], error=False):
+            return False
+
         try:
             other = Vec(other)
             return self.x == other.x and self.y == other.y and self.z == other.z

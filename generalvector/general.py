@@ -6,25 +6,30 @@ from generallibrary.types import typeChecker
 
 class General:
     """
+    Not to be used directly.
     General class that Vec2 and Vec inherits for shared functions, end-goal is that all methods are moved here to make package dry
     """
     def __init__(self, *axis, length):
-        if len(axis) == 0:
+        axis = tuple([n for n in axis if n is not None])
+
+        axisLen = len(axis)
+        if axisLen == 0:
             self.axis = tuple([0] * length)
 
-        elif len(axis) == 1:
+        elif axisLen == 1:
 
             if typeChecker(axis[0], General, error=False):
                 vector = axis[0]
                 if len(vector.axis) != length:
                     raise AttributeError(f"{vector} was supplied as first argument but it's axis length is not {length}")
 
-                self.axis = vector.axis.copy()
+                self.axis = vector.axis + tuple()
 
             else:
+                typeChecker(axis[0], float)
                 self.axis = tuple([axis[0]] * length)
 
-        elif len(axis) == length:
+        elif axisLen == length:
             self.axis = axis
 
         else:

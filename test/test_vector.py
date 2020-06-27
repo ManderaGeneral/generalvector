@@ -8,9 +8,11 @@ class VecTest(unittest.TestCase):
         self.assertRaises(TypeError, Vec, 5, 2, "")
         self.assertRaises(TypeError, Vec, 5, "", 2)
 
-        self.assertRaises(AttributeError, Vec, None, 5)
         self.assertRaises(AttributeError, Vec, 2, 5)
 
+        self.assertEqual(Vec(None).x, Vec(0))
+        self.assertEqual(Vec(None, 5).x, 5)
+        self.assertEqual(Vec(5, None).x, 5)
         self.assertEqual(Vec(5, 2, 1).x, 5)
         self.assertEqual(Vec(5, 2, 1).y, 2)
         self.assertEqual(Vec(5, 2, 1).z, 1)
