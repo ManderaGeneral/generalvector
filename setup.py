@@ -13,7 +13,7 @@ setup(
     long_description_content_type='text/markdown',
     author='Rickard "Mandera" Abraham',
     url="https://github.com/Mandera/generalvector",
-    version="1.2.2",
+    version="1.2.3",
     description=(
         "Simple immutable vectors."
     ),
