@@ -2,7 +2,6 @@ language: sh
 os: windows
 before_install:
   - choco install python
-  - python -m pip install --upgrade pip setuptools wheel
 install:
   - pip install generalvector
 script:
