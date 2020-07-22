@@ -5,11 +5,12 @@ jobs:
   include:
     - name: "Python 3.8.0 on Xenial Linux"
       python: 3.8
+      install: pip install generalvector
     - name: "Python 3.8 on Windows"
       before_install:
         - choco install python --version 3.8
         - python --version
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+      install: pip3 install generalvector
 
-install: pip3 install generalvector
 script: python -m unittest discover
