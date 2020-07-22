@@ -1,9 +1,8 @@
-language: sh
+language: shell
 os: windows
 before_install:
-  - choco install python
+  - choco install python --version 3.8.0
   - python --version
-install:
-  - pip install generalvector
-script:
-  - python -m unittest discover
+env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+install: pip3 install generalvector
+script: python -m unittest discover
