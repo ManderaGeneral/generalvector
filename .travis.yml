@@ -2,7 +2,7 @@ language: sh
 os: windows
 before_install:
   - choco install python
-  - python -m pip install --upgrade pip
+  - choco install pip
 install:
   - pip install generalvector
 script:
