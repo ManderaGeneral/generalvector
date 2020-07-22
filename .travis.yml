@@ -7,4 +7,4 @@ jobs:
 script:
   - python -m unittest discover
 install:
-  - pip install generalvector
+  - pip install .
