@@ -5,6 +5,7 @@ jobs:
       python: 3.8
       install: pip3 install generalvector --upgrade pip
     - name: "Python 3.8.0 on Windows"
+      python: 3.8
       os: windows
       language: shell
       before_install:
