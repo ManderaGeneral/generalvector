@@ -6,15 +6,15 @@ import random
 from generallibrary.values import clamp, inrange
 from generallibrary.types import typeChecker
 
-from generalvector.general import General
+from generalvector.general import GeneralVector
 
 
-class Vec2(General):
+class Vec2(GeneralVector):
     """
     Immutable vector2
     """
     def __init__(self, x=None, y=None):
-        General.__init__(self, x, y, length=2)
+        GeneralVector.__init__(self, x, y, length=2)
 
         self.x = self.axis[0]
         self.y = self.axis[1]
@@ -26,7 +26,7 @@ class Vec2(General):
         return self.__str__()
 
     def __eq__(self, other):
-        if not typeChecker(other, [float, General], error=False):
+        if not typeChecker(other, [float, GeneralVector], error=False):
             return False
 
         try:

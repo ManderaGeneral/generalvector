@@ -4,11 +4,14 @@ from generalvector.vector import Vec
 
 class VecTest(unittest.TestCase):
     def test_vec(self):
-        self.assertRaises(TypeError, Vec, "")
-        self.assertRaises(TypeError, Vec, 5, 2, "")
-        self.assertRaises(TypeError, Vec, 5, "", 2)
+        self.assertRaises(ValueError, Vec, "")
+        self.assertRaises(ValueError, Vec, 5, 2, "")
+        self.assertRaises(ValueError, Vec, 5, "", 2)
 
         self.assertRaises(AttributeError, Vec, 2, 5)
+
+
+        self.assertEqual(Vec(5.2, 2, 3), Vec("5.2", "2", 3))
 
         self.assertEqual(Vec(None).x, Vec(0))
         self.assertEqual(Vec(None, 5).x, 5)

@@ -4,7 +4,8 @@ from generalvector.vector2 import Vec2
 
 class Vec2Test(unittest.TestCase):
     def test_vec2(self):
-        self.assertRaises(TypeError, Vec2, "")
+        self.assertRaises(ValueError, Vec2, "")
+        self.assertEqual(Vec2(5.2, 2), Vec2("5.2", "2"))
 
         self.assertEqual(Vec2(None).x, Vec2(0))
         self.assertEqual(Vec2(None, 5).x, 5)
