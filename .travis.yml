@@ -1,8 +1,18 @@
 language: shell
 os: windows
-before_install:
-  - choco install python --version 3.8.0
-  - python --version
-env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+
+jobs:
+  include:
+    - name: "Python 3.8 on Windows"
+      before_install:
+        - choco install python --version 3.8
+        - python --version
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+    - name: "Python 3.7 on Windows"
+      before_install:
+        - choco install python --version 3.7
+        - python --version
+      env: PATH=/c/Python37:/c/Python37/Scripts:$PATH
+
 install: pip3 install generalvector
 script: python -m unittest discover
