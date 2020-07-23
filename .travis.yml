@@ -17,12 +17,6 @@ jobs:
       dist: bionic
       before_install: python --version
 
-    - name: "Python 3.8.5 on Linux Bionic"
-      python: 3.8.5
-      os: linux
-      dist: bionic
-      before_install: python --version
-
     - name: "Python 3.8.3 on MacOS 11.6"
       os: osx
       osx_image: xcode11.6
@@ -44,14 +38,6 @@ jobs:
       language: shell
       before_install:
         - choco install python --version 3.8.0
-        - python --version
-      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
-
-    - name: "Python 3.8.5 on Windows 10.0.17763"
-      os: windows
-      language: shell
-      before_install:
-        - choco install python --version 3.8.5
         - python --version
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
 
