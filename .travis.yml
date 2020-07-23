@@ -11,10 +11,11 @@ jobs:
       language: generic
       before_install:
         - brew unlink python
-        - brew link --force python@3.8
         - python --version
-        - export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+        - python3 --version
+        - brew link --force --overwrite python@3.8
         - python --version
+        - python3 --version
     - os: windows
       language: shell
       before_install:
