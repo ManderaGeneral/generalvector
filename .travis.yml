@@ -6,9 +6,11 @@ python: 3.8
 jobs:
   include:
     - os: linux
+      before_install: python --version
     - os: osx
       osx_image: xcode11.6
       language: shell
+      before_install: /usr/local/opt/python@3.8/bin/python3 --version
       install: /usr/local/opt/python@3.8/bin/python3 -m pip install generalvector
       script: /usr/local/opt/python@3.8/bin/python3 -m unittest discover
     - os: windows
