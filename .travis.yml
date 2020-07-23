@@ -1,7 +1,7 @@
 language: python
 script: python -m unittest discover
 install: pip3 install generalvector
-python: "3.8"
+python: 3.8
 
 jobs:
   include:
@@ -10,7 +10,10 @@ jobs:
       osx_image: xcode11.6
       env: TOXENV=py38
       language: generic
-      before_install: env
+      before_install:
+        brew info python
+        brew install python@3.8
+        brew info python
       script: python3 -m unittest discover
     - os: windows
       language: shell
