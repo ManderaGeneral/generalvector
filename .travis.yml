@@ -6,11 +6,19 @@ jobs:
   include:
 
     - name: "Python 3.8.0 on Linux Xenial"
+      python: 3.8.0
       os: linux
       dist: xenial
       before_install: python --version
 
     - name: "Python 3.8.0 on Linux Bionic"
+      python: 3.8.0
+      os: linux
+      dist: bionic
+      before_install: python --version
+
+    - name: "Python 3.8.5 on Linux Bionic"
+      python: 3.8.5
       os: linux
       dist: bionic
       before_install: python --version
