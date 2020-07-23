@@ -10,12 +10,7 @@ jobs:
       osx_image: xcode11.6
       language: generic
       before_install:
-        - brew unlink python
-        - python --version
-        - python3 --version
-        - brew link --force --overwrite python@3.8
-        - python --version
-        - python3 --version
+        - brew info python@3.8
     - os: windows
       language: shell
       before_install:
