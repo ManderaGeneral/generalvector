@@ -13,7 +13,7 @@ jobs:
         - brew unlink python
         - brew link --force python@3.8
         - python --version
-        - echo 'export PATH="/usr/local/opt/python@3.8/bin:$PATH"' >> /Users/travis/.bash_profile
+        - export PATH="/usr/local/opt/python@3.8/bin:$PATH"
         - python --version
     - os: windows
       language: shell
