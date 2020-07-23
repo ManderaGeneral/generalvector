@@ -11,9 +11,11 @@ jobs:
       env: TOXENV=py38
       language: generic
       before_install:
-        - brew info python
-        - brew install python@3.8
-        - brew info python
+        - python --version
+        - python3 --version
+        - brew upgrade python@3.8
+        - python --version
+        - python3 --version
       script: python3 -m unittest discover
     - os: windows
       language: shell
