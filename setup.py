@@ -28,6 +28,7 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",
+
         "Topic :: Utilities",
     ]
 )
