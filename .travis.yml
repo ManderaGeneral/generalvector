@@ -13,6 +13,8 @@ jobs:
       before_install:
         - python --version
         - python3 --version
+        - python@3.8 --version
+        - brew info python@3.8
         - brew upgrade python@3.8
         - python --version
         - python3 --version
