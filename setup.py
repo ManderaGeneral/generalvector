@@ -21,6 +21,10 @@ setup(
     install_requires=["wheel", "generallibrary"],
     classifiers=[
         "Operating System :: Microsoft :: Windows :: Windows 7",
+        "Operating System :: Microsoft :: Windows :: Windows 10",
+        "Operating System :: POSIX :: Linux",
+        "Operating System :: MacOS",
+        "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
         "Development Status :: 2 - Pre-Alpha",
         "License :: OSI Approved :: MIT License",
