@@ -9,9 +9,7 @@ jobs:
     - os: osx
       osx_image: xcode11.6
       language: generic
-      before_install:
-        - brew info python@3.8
-        - /usr/local/opt/python@3.8/bin/python3 --version
+      script: /usr/local/opt/python@3.8/bin/python3 -m unittest discover
     - os: windows
       language: shell
       before_install:
