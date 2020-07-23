@@ -1,7 +1,6 @@
 language: python
 install: pip3 install generalvector
 script: python -m unittest discover
-python: 3.8
 
 jobs:
   include:
@@ -32,12 +31,19 @@ jobs:
       install: /usr/local/opt/python@3.8/bin/python3 -m pip install generalvector
       script: /usr/local/opt/python@3.8/bin/python3 -m unittest discover
 
-    - name: "Python 3.8.0 on Windows"
+    - name: "Python 3.8.0 on Windows 10.0.17763"
       os: windows
       language: shell
       before_install:
-        - systeminfo
         - choco install python --version 3.8.0
+        - python --version
+      env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
+
+    - name: "Python 3.8.5 on Windows 10.0.17763"
+      os: windows
+      language: shell
+      before_install:
+        - choco install python --version 3.8.5
         - python --version
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
 
