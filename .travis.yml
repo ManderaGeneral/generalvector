@@ -1,23 +1,25 @@
 language: python
 script: python -m unittest discover
+install: pip3 install generalvector
+
 jobs:
   include:
-    - python: 3.8
-      install: pip3 install generalvector --upgrade pip
-    - python: 3.8
+    - os: linux
+      python: 3.8
+    - os: osx
+      python: 3.8
+      osx_image: xcode11.6
       env: TOXENV=py38
-      os: osx
-      osx_image: xcode12
       language: generic
       before_install: env
       script: python3 -m unittest discover
-    - python: 3.8
-      os: windows
+    - os: windows
+      python: 3.8
       language: shell
       before_install:
         - choco install python --version 3.8.0
         - python --version
       env: PATH=/c/Python38:/c/Python38/Scripts:$PATH
-      install: pip3 install generalvector
+
 
 
