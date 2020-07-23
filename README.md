@@ -1,5 +1,5 @@
 # Package: generalvector
-Vectors made by me, featuring Vec and Vec2, inspired by Expression 2* in Wiremod inside Garry's Mod. 
+Vectors, featuring Vec and Vec2, inspired by Expression 2* in Wiremod inside Garry's Mod. 
 
 The vectors are immutable, so any time a value inside one is changed it returns a new vector.
 
