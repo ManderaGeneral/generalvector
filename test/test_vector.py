@@ -31,6 +31,7 @@ class VecTest(unittest.TestCase):
         self.assertEqual(Vec(5, 2, 1), Vec(Vec(5, 2, 1)))
 
     def test_equal(self):
+        """Just testing if UnitTest and Travis will pick up this"""
         self.assertRaises(TypeError, Vec.__eq__, "")
 
         self.assertTrue(Vec(1) == Vec(1))
@@ -48,6 +49,7 @@ class VecTest(unittest.TestCase):
         self.assertFalse(Vec(5.2, 5.2, 5.2) == "test")
 
     def test_add(self):
+        """Short one"""
         self.assertRaises(TypeError, Vec.__add__, "")
         self.assertRaises(TypeError, Vec.__add__, False)
 
@@ -60,6 +62,11 @@ class VecTest(unittest.TestCase):
         self.assertEqual(Vec(5, 2, 3) + 3.5, Vec(8.5, 5.5, 6.5))
 
     def test_sub(self):
+        """
+        Multiple
+        lines
+        here
+        """
         self.assertRaises(TypeError, Vec.__sub__, "")
         self.assertRaises(TypeError, Vec.__sub__, True)
 
