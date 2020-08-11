@@ -43,7 +43,7 @@ class GeneralVector:
 
     def sanitize(self, ints=False, positive=False, positiveOrZero=False, negative=False, negativeOrZero=False, minimum=None, maximum=None):
         """
-        Sanitize this vector with a bunch of optional flags
+        Sanitize this vector with a bunch of optional flags.
 
         :param generalvector.Vec or generalvector.Vec2 self:
         :param ints:
@@ -95,7 +95,7 @@ class GeneralVector:
 
     def absolute(self):
         """
-        Return this vector with absolute values
+        Return this vector with absolute values.
 
         :param generalvector.Vec or generalvector.Vec2 self:
         """

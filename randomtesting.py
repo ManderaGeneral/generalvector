@@ -1,8 +1,17 @@
 
 from generalvector import Vec2, Vec
+from generalvector.general import GeneralVector
 
-print(Vec(-2, 0, 0).distance(Vec(0, 0, 0)))
 
-print(Vec(Vec(0)))
+from generallibrary import getLocalFeaturesAsMD
 
-print(5)
+
+# print(getLocalFeaturesAsMD(locals(), "generalvector"))
+
+
+d = dict(Vec2.__dict__)
+d.update(dict(Vec.__dict__))
+d.update(dict(GeneralVector.__dict__))
+
+
+print(getLocalFeaturesAsMD(d, "generalvector"))

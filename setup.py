@@ -13,12 +13,13 @@ setup(
     long_description_content_type='text/markdown',
     author='Rickard "Mandera" Abraham',
     url="https://github.com/Mandera/generalvector",
-    version="1.3.0",
+    version="1.4.0",
     description=(
         "Simple immutable vectors."
     ),
     packages=find_packages(),
     install_requires=["wheel", "generallibrary"],
+    python_requires=">= 3.7, < 3.9",
     classifiers=[
         "Operating System :: Microsoft :: Windows :: Windows 7",
         "Operating System :: Microsoft :: Windows :: Windows 10",

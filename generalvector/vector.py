@@ -11,7 +11,7 @@ from generalvector.general import GeneralVector
 
 class Vec(GeneralVector):
     """
-    Immutable vector
+    Immutable vector.
     """
     def __init__(self, x=None, y=None, z=None):
         GeneralVector.__init__(self, x, y, z, length=3)
@@ -72,13 +72,13 @@ class Vec(GeneralVector):
 
     def length(self):
         """
-        Get the length of this vector using pythagorean theorem
+        Get the length of this vector using pythagorean theorem.
         """
         return sqrt(self.x ** 2 + self.y ** 2 + self.z ** 2)
 
     def normalized(self):
         """
-        Get this vector normalized by dividing each value by it's length
+        Get this vector normalized by dividing each value by it's length.
         """
         length = self.length()
         if length == 0:
@@ -87,7 +87,7 @@ class Vec(GeneralVector):
 
     def round(self):
         """
-        Get this vector with each value rounded
+        Get this vector with each value rounded.
         """
         return Vec(round(self.x), round(self.y), round(self.z))
 
@@ -138,7 +138,7 @@ class Vec(GeneralVector):
 
     def inrange(self, minimum, maximum):
         """
-        Return whether this vector is between two other vectors
+        Return whether this vector is between two other vectors.
 
         :param float or Vec minimum: Minimum value, floats are converted to Vec
         :param float or Vec maximum: Maximum value, floats are converted to Vec
@@ -173,7 +173,7 @@ class Vec(GeneralVector):
 
     def distance(self, other):
         """
-        Return distance between two Vectors
+        Return distance between two Vectors.
 
         :param other: Another Vec
         """

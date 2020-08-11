@@ -13,6 +13,29 @@ The bulk of the code is written twice, with one verion in vector and one version
 pip install generalvector
 ```
 
+## Features
+| Module   | Name   | Explanation       |
+|:---------|:-------|:------------------|
+| vector   | Vec    | Immutable vector  |
+| vector2  | Vec2   | Immutable vector2 |
+
+## Vector methods
+| Name       | Explanation                                                                                                 |
+|:-----------|:------------------------------------------------------------------------------------------------------------|
+| absolute   | Return this vector with absolute values.                                                                    |
+| confineTo  | Confine this vector to an area, but unlike clamp it subtracts axis * n to create an 'infinite' area effect. |
+| sanitize   | Sanitize this vector with a bunch of optional flags.                                                        |
+| clamp      | Get this vector clamped between two values as a new vector.                                                 |
+| distance   | Return distance between two Vectors.                                                                        |
+| hex        | Get a hex based on each value. Rounded and clamped between 0 and 255.                                       |
+| inrange    | Return whether this vector is between two other vectors.                                                    |
+| length     | Get the length of this vector using pythagorean theorem.                                                    |
+| max        | Get a new vector containing the maximum value for each value in the two vectors.                            |
+| min        | Get a new vector containing the minimum value for each value in the two vectors.                            |
+| normalized | Get this vector normalized by dividing each value by it's length.                                           |
+| range      | Get a range from two vectors.                                                                               |
+| round      | Get this vector with each value rounded.                                                                    |
+
 ## Usage example
 ```python
 from generalvector import Vec, Vec2
