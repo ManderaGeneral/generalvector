@@ -15,3 +15,4 @@ d.update(dict(GeneralVector.__dict__))
 
 
 print(getLocalFeaturesAsMD(d, "generalvector"))
+
