@@ -32,16 +32,6 @@ jobs:
         run: |
           python -m unittest discover
 
-  merge:
-    needs: unittest
-    runs-on: ubuntu-latest
-    steps:
-      - uses: tukasz/direct-merge-action@v1
-      - with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        source-branch: deploy
-        target-branch: master
-
 
 
 
