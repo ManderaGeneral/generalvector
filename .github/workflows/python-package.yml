@@ -12,8 +12,10 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: [3.7, 3.8]
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        python-version: [3.7]
+        os: [ubuntu-latest]
+#        python-version: [3.7, 3.8]
+#        os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
       - uses: actions/checkout@v2
@@ -32,11 +34,21 @@ jobs:
         run: |
           python -m unittest discover
 
-  # Other jobs are defined above.
-  merger:
-    name: Merge to master
+  pull-request:
     needs:
       - unittest
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+  merger:
+    needs:
+      - unittest
+      - pull-request
     runs-on: ubuntu-latest
     steps:
       - name: Merge to master
