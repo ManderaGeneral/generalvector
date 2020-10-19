@@ -36,11 +36,12 @@ jobs:
     runs-on: ubuntu-latest
     needs: unittest
     steps:
-      uses: tukasz/direct-merge-action@v1
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        source-branch: deploy
-        target-branch: master
+      - name: testing
+        uses: tukasz/direct-merge-action@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          source-branch: deploy
+          target-branch: master
 
 
 
