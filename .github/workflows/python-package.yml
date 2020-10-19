@@ -51,6 +51,7 @@ jobs:
       with:
         GITHUB_LOGIN: Mandera
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        MERGE_METHOD: SQUASH
 
 #  merger:
 #    needs:
