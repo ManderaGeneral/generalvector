@@ -32,9 +32,9 @@ jobs:
         run: |
           python -m unittest discover
 
-  merge:
-    needs: unittest
+  merger:
     runs-on: ubuntu-latest
+    needs: unittest
     steps:
       uses: tukasz/direct-merge-action@v1
       with:
