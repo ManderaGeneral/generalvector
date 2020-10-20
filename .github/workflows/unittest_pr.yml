@@ -1,5 +1,5 @@
 
-name: UnitTest and Merge
+name: UnitTest and PR
 
 on:
   push:
@@ -45,13 +45,6 @@ jobs:
       uses: repo-sync/pull-request@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-
-    - name: Merge to master
-      uses: ridedott/merge-me-action@master
-      with:
-        GITHUB_LOGIN: Mandera
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        MERGE_METHOD: SQUASH
 
 
 #  merger:
