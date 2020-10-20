@@ -21,9 +21,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install ${{ github.event.repository.name }}
-          $latest=(pip show ${{ github.event.repository.name }} | grep Version)
-        outputs:
-          latest: $latest
+          echo latest=(pip show ${{ github.event.repository.name }} | grep Version)
 
 #      - uses: jungwinter/split@v1
 #        id: split
@@ -36,7 +34,7 @@ jobs:
       - name: Get pushed version
         run: |
           python setup.py --version
-          echo ${{ steps.getlatest.outputs.latest }}
+          echo ${ env.latest }
 
 
 
