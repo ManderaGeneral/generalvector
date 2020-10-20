@@ -22,14 +22,12 @@ jobs:
           pip install ${{ github.event.repository.name }}
           pip show ${{ github.event.repository.name }} | grep Version
 
-#      - name: Checkout latest release
-#        uses: actions/checkout@v2
-#        with:
-#          repository: "${{ github.event.repository.name }}
+      - name: Checkout latest release
+        uses: actions/checkout@v2
 
-#      - name: Get version
-#        run: |
-#          VERSION=$(python setup.py --version)
+      - name: Get pushed version
+        run: |
+          python setup.py --version
 
 
 
