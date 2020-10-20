@@ -3,8 +3,8 @@ name: Merge
 
 on:
   pull_request:
-    types: [ opened ]
-    branches: [ master ]
+    types: opened
+    branches: deploy
 
 jobs:
   automerge:
