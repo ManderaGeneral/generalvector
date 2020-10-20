@@ -1,5 +1,5 @@
 
-name: UnitTest and Merge
+name: UnitTest and PR
 
 on:
   push:
@@ -46,10 +46,6 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
 
-    - name: Merge to master
-      uses: ridedott/merge-me-action@master
-      with:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 #  merger:
 #    needs:
