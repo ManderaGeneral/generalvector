@@ -22,10 +22,10 @@ jobs:
           pip install ${{ github.event.repository.name }}
           LATEST=$(pip show ${{ github.event.repository.name }} | grep Version)
 
-      - uses: jungwinter/split@v1
-        id: split
-        with:
-          msg: $LATEST
+#      - uses: jungwinter/split@v1
+#        id: split
+#        with:
+#          msg: $LATEST
 
       - name: Checkout latest release
         uses: actions/checkout@v2
@@ -33,7 +33,8 @@ jobs:
       - name: Get pushed version
         run: |
           python setup.py --version
-          echo "${{ steps.split.outputs._1 }}"
+          echo $LATEST
+#          echo "${{ steps.split.outputs._1 }}"
 
 
 
