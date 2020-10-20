@@ -34,7 +34,7 @@ jobs:
         run: |
           python -m unittest discover
 
-  pr-and-merge:
+  pull-request:
     needs:
       - unittest
     runs-on: ubuntu-latest
