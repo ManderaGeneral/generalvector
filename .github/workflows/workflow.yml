@@ -52,7 +52,7 @@ jobs:
         echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
 
         X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n'))
-        DEPENDENT_PACKAGES=($(echo ${X[1]} | tr ', ' '\n'))
+        echo "DEPENDENT_PACKAGES=($(echo ${X[1]} | tr ', ' '\n'))" >> $GITHUB_ENV
 
     - name: Checkout
       uses: actions/checkout@v2
@@ -70,8 +70,8 @@ jobs:
         echo ${{ env.NEW_VERSION }}
 
         echo "Packages depending on this one:"
-        echo $DEPENDENT_PACKAGES
-        for x in ${DEPENDENT_PACKAGES[@]}; do echo $x; done
+        echo ${{ env.DEPENDENT_PACKAGES }}
+        for x in ${{ env.DEPENDENT_PACKAGES }}; do echo $x; done
 
 #    - name: Publish
 #      if: ${{ env.NEW_VERSION }} != ${{ env.OLD_VERSION }}
