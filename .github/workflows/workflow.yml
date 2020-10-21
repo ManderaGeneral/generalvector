@@ -64,6 +64,9 @@ jobs:
       run: |
         echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
 
+        pip show ${{ github.event.repository.name }}
+        pip show ${{ github.event.repository.name }} | grep Required-by
+
     - name: Print info
       run: |
         echo Old version:
