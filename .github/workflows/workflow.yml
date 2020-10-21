@@ -46,7 +46,15 @@ jobs:
     - name: Install latest release to get version
       run: |
         python -m pip install --upgrade pip
-        pip install ${{ github.event.repository.name }} generalgui
+        pip install requests
+
+        PACKAGES=$(python)
+        import requests
+        import re
+        print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))
+        exit()
+
+        pip install $PACKAGES
 
         X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
         echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
