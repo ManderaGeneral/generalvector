@@ -48,21 +48,24 @@ jobs:
         python -m pip install --upgrade pip
         pip install ${{ github.event.repository.name }}
 
-        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n')); OLD_VERSION=${X[1]}
-        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n')); DEPENDENT_PACKAGES_STR=${X[1]}
-        DEPENDENT_PACKAGES=($(echo $DEPENDENT_PACKAGES_STR | tr ', ' '\n'))
+        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
+        echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
+
+        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n'))
+        DEPENDENT_PACKAGES=($(echo ${X[1]} | tr ', ' '\n'))
 
     - name: Checkout
       uses: actions/checkout@v2
 
     - name: Print info
       run: |
-        NEW_VERSION=$(python setup.py --version)
+        echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+
         echo "Packages depending on this one:"
         for x in ${DEPENDENT_PACKAGES[@]}; do echo $x; done
 
     - name: Publish
-      if: $NEW_VERSION != $OLD_VERSION
+      if: ${{ env.NEW_VERSION }} != ${{ env.OLD_VERSION }}
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
         TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
@@ -74,19 +77,19 @@ jobs:
 
 
 
-## Direct split
-#X=($(echo VALUE | tr ', ' '\n')); NAME=${X[1]}
-#
-## Create array of strings
-#NAME=($(echo VALUE | tr ',' '\n'))
-#
-## Iterate array
-#for x in ${NAME[@]}; do echo $x; done
-#
-#
-#
-## Assign to github variable `${{ env.NAME }}`
-#echo "NAME=$(VALUE)" >> $GITHUB_ENV
+# Direct split
+X=($(echo VALUE | tr ', ' '\n')); NAME=${X[1]}
+
+# Create array of strings
+NAME=($(echo VALUE | tr ',' '\n'))
+
+# Iterate array
+for x in ${NAME[@]}; do echo $x; done
+
+
+
+# Assign to github variable `${{ env.NAME }}`
+echo "NAME=$(VALUE)" >> $GITHUB_ENV
 
 
 
