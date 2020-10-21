@@ -53,7 +53,7 @@ jobs:
           echo 'print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))' >> packages.py
 
           ALL_PACKAGES=$(python packages.py)
-          echo "ALL_PACKAGES=$(ALL_PACKAGES)" >> $GITHUB_ENV
+          echo ALL_PACKAGES=$ALL_PACKAGES >> $GITHUB_ENV
           pip install $ALL_PACKAGES
 
           X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
@@ -77,7 +77,7 @@ jobs:
 
           echo New version:
           echo ${{ env.NEW_VERSION }}
-          echo OLD_VERSION=${{ env.OLD_VERSION }} >> "metadata.txt"
+          echo NEW_VERSION=${{ env.NEW_VERSION }} >> "metadata.txt"
 
           echo All of my published packages:
           echo ${{ env.ALL_PACKAGES }}
