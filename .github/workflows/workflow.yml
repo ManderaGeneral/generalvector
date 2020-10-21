@@ -46,7 +46,7 @@ jobs:
     - name: Install latest release to get version
       run: |
         python -m pip install --upgrade pip
-        pip install ${{ github.event.repository.name }}
+        pip install ${{ github.event.repository.name }} generalgui
 
         X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
         echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
@@ -63,9 +63,6 @@ jobs:
     - name: Test
       run: |
         echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
-
-        pip show ${{ github.event.repository.name }}
-        pip show ${{ github.event.repository.name }} | grep Required-by
 
     - name: Print info
       run: |
