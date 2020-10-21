@@ -57,10 +57,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Test
+      run: |
+        echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+
     - name: Print info
       run: |
-        echo "NEW_VERSION=$(echo python setup.py --version)" >> $GITHUB_ENV
-
         echo Old version:
         echo ${{ env.OLD_VERSION }}
 
