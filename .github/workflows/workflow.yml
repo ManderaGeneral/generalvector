@@ -52,9 +52,9 @@ jobs:
         pip install requests
 
 
-        echo "import requests" >> test.py
-        echo "import re" >> test.py
-        echo "print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))" >> test.py
+        echo 'import requests' >> test.py
+        echo 'import re' >> test.py
+        echo 'print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))' >> test.py
 
         python test.py
 
