@@ -49,11 +49,10 @@ jobs:
         pip install requests
 
         PACKAGES=$(python)
-        import requests
-        import re
-        print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))
-        exit()
-
+        >>> import requests
+        >>> import re
+        >>> print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))
+        >>> exit()
         echo $PACKAGES
 #        pip install $PACKAGES
 #
