@@ -51,8 +51,13 @@ jobs:
         python -m pip install --upgrade pip
         pip install requests
 
-        PACKAGES=$(python); import requests; import re; print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text))); exit()
-        echo $PACKAGES
+
+        echo "import requests" >> test.py
+        echo "import re" >> test.py
+        echo "print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))" >> test.py
+
+        python test.py
+
 #        pip install $PACKAGES
 #
 #        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
