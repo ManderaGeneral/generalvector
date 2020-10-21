@@ -59,7 +59,7 @@ jobs:
 
     - name: Print info
       run: |
-        echo "NEW_VERSION=HELLO" >> $GITHUB_ENV
+        echo "NEW_VERSION=(HELLO)" >> $GITHUB_ENV
 #        echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
 
         echo Old version:
