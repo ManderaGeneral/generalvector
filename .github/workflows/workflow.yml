@@ -52,9 +52,9 @@ jobs:
           echo 'import re' >> packages.py
           echo 'print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))' >> packages.py
 
-          PACKAGES=$(python packages.py)
-          echo $PACKAGES >> dependent_packages.txt
-          pip install $PACKAGES
+          ALL_PACKAGES=$(python packages.py)
+          echo "ALL_PACKAGES=$(ALL_PACKAGES)" >> $GITHUB_ENV
+          pip install $ALL_PACKAGES
 
           X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
           echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
@@ -73,21 +73,28 @@ jobs:
         run: |
           echo Old version:
           echo ${{ env.OLD_VERSION }}
+          echo OLD_VERSION=${{ env.OLD_VERSION }} >> "metadata.txt"
 
           echo New version:
           echo ${{ env.NEW_VERSION }}
+          echo OLD_VERSION=${{ env.OLD_VERSION }} >> "metadata.txt"
+
+          echo All of my published packages:
+          echo ${{ env.ALL_PACKAGES }}
+          echo ALL_PACKAGES=${{ env.ALL_PACKAGES }} >> "metadata.txt"
 
           echo Packages depending on this one:
           echo ${{ env.DEPENDENT_PACKAGES }}
+          echo DEPENDENT_PACKAGES=${{ env.DEPENDENT_PACKAGES }} >> "metadata.txt"
 
-          PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
-          for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
+#          PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
+#          for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
 
       - name: Upload artifact test
         uses: actions/upload-artifact@v2
         with:
-          name: dependent_packages
-          path: dependent_packages.txt
+          name: metadata
+          path: metadata.txt
 
 
 
