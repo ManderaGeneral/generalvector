@@ -77,19 +77,19 @@ jobs:
 
 
 
-# Direct split
-X=($(echo VALUE | tr ', ' '\n')); NAME=${X[1]}
-
-# Create array of strings
-NAME=($(echo VALUE | tr ',' '\n'))
-
-# Iterate array
-for x in ${NAME[@]}; do echo $x; done
-
-
-
-# Assign to github variable `${{ env.NAME }}`
-echo "NAME=$(VALUE)" >> $GITHUB_ENV
+## Direct split
+#X=($(echo VALUE | tr ', ' '\n')); NAME=${X[1]}
+#
+## Create array of strings
+#NAME=($(echo VALUE | tr ',' '\n'))
+#
+## Iterate array
+#for x in ${NAME[@]}; do echo $x; done
+#
+#
+#
+## Assign to github variable `${{ env.NAME }}`
+#echo "NAME=$(VALUE)" >> $GITHUB_ENV
 
 
 
