@@ -54,34 +54,39 @@ jobs:
         print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))
         exit()
 
-        pip install $PACKAGES
+        echo $PACKAGES
+#        pip install $PACKAGES
+#
+#        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
+#        echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
+#
+#        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n'))
+#        echo "DEPENDENT_PACKAGES=${X[1]}" >> $GITHUB_ENV
+#
+#    - name: Checkout
+#      uses: actions/checkout@v2
+#
+#    - name: Test
+#      run: |
+#        echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+#
+#    - name: Print info
+#      run: |
+#        echo Old version:
+#        echo ${{ env.OLD_VERSION }}
+#
+#        echo New version:
+#        echo ${{ env.NEW_VERSION }}
+#
+#        echo Packages depending on this one:
+#        echo ${{ env.DEPENDENT_PACKAGES }}
+#
+#        PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
+#        for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
 
-        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
-        echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
 
-        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n'))
-        echo "DEPENDENT_PACKAGES=${X[1]}" >> $GITHUB_ENV
 
-    - name: Checkout
-      uses: actions/checkout@v2
 
-    - name: Test
-      run: |
-        echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
-
-    - name: Print info
-      run: |
-        echo Old version:
-        echo ${{ env.OLD_VERSION }}
-
-        echo New version:
-        echo ${{ env.NEW_VERSION }}
-
-        echo Packages depending on this one:
-        echo ${{ env.DEPENDENT_PACKAGES }}
-
-        PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
-        for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
 
 #    - name: Publish
 #      if: ${{ env.NEW_VERSION }} != ${{ env.OLD_VERSION }}
