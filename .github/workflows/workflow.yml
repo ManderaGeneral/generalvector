@@ -38,65 +38,68 @@ jobs:
 #    needs: unittest
     runs-on: ubuntu-latest
     steps:
-    - name: Set up Python
-      uses: actions/setup-python@v2
-      with:
-        python-version: 3.7
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
 
-    - name: Install latest release to get version
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests
+      - name: Install all my packages to get versions and dependents
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+          echo 'import requests' >> packages.py
+          echo 'import re' >> packages.py
+          echo 'print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))' >> packages.py
+
+          PACKAGES=$(python packages.py)
+          echo $PACKAGES >> dependent_packages.txt
+          pip install $PACKAGES
+
+          X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
+          echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
+
+          X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n'))
+          echo "DEPENDENT_PACKAGES=${X[1]}" >> $GITHUB_ENV
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Test
+        run: |
+          echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
+
+      - name: Print info
+        run: |
+          echo Old version:
+          echo ${{ env.OLD_VERSION }}
+
+          echo New version:
+          echo ${{ env.NEW_VERSION }}
+
+          echo Packages depending on this one:
+          echo ${{ env.DEPENDENT_PACKAGES }}
+
+          PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
+          for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
+
+      - name: Upload artifact test
+        uses: actions/upload-artifact@v2
+        with:
+          name: dependent_packages
+          path: dependent_packages.txt
 
 
-        echo 'import requests' >> test.py
-        echo 'import re' >> test.py
-        echo 'print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))' >> test.py
 
-        PACKAGES=$(python test.py)
-
-        pip install $PACKAGES
-
-        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Version) | tr ': ' '\n'))
-        echo "OLD_VERSION=${X[1]}" >> $GITHUB_ENV
-
-        X=($(echo $(pip show ${{ github.event.repository.name }} | grep Required-by) | tr ': ' '\n'))
-        echo "DEPENDENT_PACKAGES=${X[1]}" >> $GITHUB_ENV
-
-    - name: Checkout
-      uses: actions/checkout@v2
-
-    - name: Test
-      run: |
-        echo "NEW_VERSION=$(python setup.py --version)" >> $GITHUB_ENV
-
-    - name: Print info
-      run: |
-        echo Old version:
-        echo ${{ env.OLD_VERSION }}
-
-        echo New version:
-        echo ${{ env.NEW_VERSION }}
-
-        echo Packages depending on this one:
-        echo ${{ env.DEPENDENT_PACKAGES }}
-
-        PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
-        for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
-
-
-
-
-
-#    - name: Publish
-#      if: ${{ env.NEW_VERSION }} != ${{ env.OLD_VERSION }}
-#      env:
-#        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
-#        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
-#      run: |
-#        pip install twine
-#        python setup.py sdist bdist_wheel
-#        twine upload dist/*
+  #    - name: Publish
+  #      if: ${{ env.NEW_VERSION }} != ${{ env.OLD_VERSION }}
+  #      env:
+  #        TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
+  #        TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
+  #      run: |
+  #        pip install twine
+  #        python setup.py sdist bdist_wheel
+  #        twine upload dist/*
 
 
 
