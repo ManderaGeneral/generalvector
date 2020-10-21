@@ -69,10 +69,10 @@ jobs:
         echo New version:
         echo ${{ env.NEW_VERSION }}
 
-        echo "Packages depending on this one:"
+        echo Packages depending on this one:
         echo ${{ env.DEPENDENT_PACKAGES }}
 
-        PACKAGE_ARRAY=($(echo {{ env.DEPENDENT_PACKAGES }} | tr ',' '\n'))
+        PACKAGE_ARRAY=($(echo {{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
         for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
 
 #    - name: Publish
