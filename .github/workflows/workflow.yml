@@ -64,6 +64,8 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          - token: ${{ secrets.KEY }}
 
       - name: Test
         run: |
@@ -88,12 +90,16 @@ jobs:
           echo DEPENDENT_PACKAGES=${{ env.DEPENDENT_PACKAGES }} >> "metadata.txt"
 
 
-#          sudo apt install git-all
+          sudo apt install git-all
 
           PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
           for x in ${PACKAGE_ARRAY[@]}; do
           echo $x
-          echo $x
+          git clone https://github.com/Mandera/$x
+          cd $x
+          git commit -m "Trigger CI" --allow-empty
+          git push
+          cd ..
           done
 
       - name: Upload artifact test
@@ -115,6 +121,8 @@ jobs:
   #        twine upload dist/*
 
 
+#          git config --global user.email "rickard.abraham@gmail.com"
+#          git config --global user.name 'Rickard "Mandera" Abraham'
 
 
 ## Direct split
