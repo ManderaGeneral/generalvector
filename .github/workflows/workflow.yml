@@ -99,6 +99,9 @@ jobs:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
         run: |
+          echo ${{ env.NEW_VERSION }}
+          echo ${{ env.OLD_VERSION }}
+
           pip install twine
           python setup.py sdist bdist_wheel
           twine upload dist/*
