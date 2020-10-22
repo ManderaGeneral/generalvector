@@ -64,8 +64,6 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          - token: ${{ secrets.KEY }}
 
       - name: Test
         run: |
