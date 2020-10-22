@@ -94,7 +94,7 @@ jobs:
           path: metadata.txt
 
       - name: Publish
-        if: ${{ env.NEW_VERSION }} != ${{ env.OLD_VERSION }}
+        if: env.NEW_VERSION != env.OLD_VERSION
         env:
           TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
           TWINE_PASSWORD: ${{ secrets.PYPI_PASSWORD }}
@@ -110,7 +110,7 @@ jobs:
 
 
       - name: Push empty commits to dependents
-        if: ${{ env.PUBLISHED }} or contains(github.event.head_commit.message, '[CI]')"
+        if: env.PUBLISHED || contains(github.event.head_commit.message, '[CI]')"
         run: |
           sudo apt install git-all
           git config --global user.email "rickard.abraham@gmail.com"
