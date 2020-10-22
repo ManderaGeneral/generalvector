@@ -119,7 +119,7 @@ jobs:
           PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
           for x in ${PACKAGE_ARRAY[@]}; do
           echo $x
-          git clone https://Mandera:${{ secrets.GIT_PASSWORD }}@github.com/Mandera/$x.git
+          git clone https://Mandera:${{ secrets.GIT_PASSWORD }}@github.com/ManderaGeneral/$x.git
           cd $x
           git commit -m "[CI] Automatic test trigger for ${{ github.event.repository.name }}'s new ${{ env.NEW_VERSION }} release" --allow-empty
           git push
