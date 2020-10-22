@@ -1,0 +1,5 @@
+{
+    "name": "ManderaGeneral Workflow",
+    "description": "Unittests, PyPI publishing and CI propagation for master pushes.",
+    "iconName": "Rund512"
+}
