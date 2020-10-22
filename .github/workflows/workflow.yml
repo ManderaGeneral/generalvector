@@ -88,12 +88,12 @@ jobs:
           echo DEPENDENT_PACKAGES=${{ env.DEPENDENT_PACKAGES }} >> "metadata.txt"
 
 
-          sudo apt install git-all
+#          sudo apt install git-all
 
           PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
-          for x in ${PACKAGE_ARRAY[@]}
-          do echo $x
-          do echo $x
+          for x in ${PACKAGE_ARRAY[@]}; do
+          echo $x
+          echo $x
           done
 
       - name: Upload artifact test
