@@ -87,8 +87,14 @@ jobs:
           echo ${{ env.DEPENDENT_PACKAGES }}
           echo DEPENDENT_PACKAGES=${{ env.DEPENDENT_PACKAGES }} >> "metadata.txt"
 
-#          PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
-#          for x in ${PACKAGE_ARRAY[@]}; do echo $x; done
+
+          sudo apt install git-all
+
+          PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
+          for x in ${PACKAGE_ARRAY[@]}
+          do echo $x
+          do echo $x
+          done
 
       - name: Upload artifact test
         uses: actions/upload-artifact@v2
