@@ -90,7 +90,7 @@ jobs:
 
           sudo apt install git-all
           git config --global user.email "rickard.abraham@gmail.com"
-          git config --global user.name 'Rickard "Mandera" Abraham'
+          git config --global user.name Mandera
 
           PACKAGE_ARRAY=($(echo ${{ env.DEPENDENT_PACKAGES }} | tr ', ' '\n'))
           for x in ${PACKAGE_ARRAY[@]}; do
