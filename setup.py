@@ -19,6 +19,9 @@ setup(
     ),
     packages=find_packages(),
     install_requires=["wheel", "generallibrary"],
+    extras_require={
+        "full": [],
+    },
     python_requires=">= 3.7, < 3.9",
     classifiers=[
         "Operating System :: Microsoft :: Windows :: Windows 7",
