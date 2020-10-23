@@ -8,7 +8,7 @@ on:
 jobs:
 
   unittest:
-    if: !contains(github.event.head_commit.message, '[CI SKIP]')
+    if: "!contains(github.event.head_commit.message, '[CI SKIP]')"
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
