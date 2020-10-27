@@ -44,6 +44,9 @@ assert Vec2(3, 4).length() == 5
 ```
 
 ## Releases
+#### generalvector 1.5
+ * Moved test folder to inside generalvector package
+ 
 #### generalvector 1.4
  * Updated readme
 
