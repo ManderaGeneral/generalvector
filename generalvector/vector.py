@@ -191,5 +191,3 @@ class Vec(GeneralVector):
 
 
 
-
-

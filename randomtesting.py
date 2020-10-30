@@ -16,8 +16,8 @@ from generallibrary import getLocalFeaturesAsMD
 # print(getLocalFeaturesAsMD(d, "generalvector"))
 
 
-import requests
-import re
+from setuptools import find_packages
 
-print(" ".join(re.findall("/project/(.*)/", requests.get("https://pypi.org/user/Mandera/").text)))
+print(find_packages())
+
 
