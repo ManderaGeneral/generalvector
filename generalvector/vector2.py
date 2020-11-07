@@ -26,14 +26,10 @@ class Vec2(GeneralVector):
         return self.__str__()
 
     def __eq__(self, other):
-        if not typeChecker(other, [float, GeneralVector], error=False):
-            return False
-
-        try:
-            other = Vec2(other)
+        if typeChecker(other, GeneralVector, error=False):
             return self.x == other.x and self.y == other.y
-        except:
-            return False
+        else:
+            return self.x == other and self.y == other
 
     def __add__(self, other):
         other = Vec2(other)
