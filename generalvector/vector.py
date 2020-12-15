@@ -3,8 +3,7 @@ from math import sqrt
 
 import random
 
-from generallibrary.values import clamp, inrange
-from generallibrary.types import typeChecker
+from generallibrary import clamp, inrange, typeChecker
 
 from generalvector.general import GeneralVector
 

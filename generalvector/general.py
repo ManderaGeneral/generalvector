@@ -1,7 +1,5 @@
 
-from generallibrary.values import confineTo
-
-from generallibrary.types import typeChecker
+from generallibrary import typeChecker, confineTo
 
 
 class GeneralVector:
