@@ -23,40 +23,40 @@ Simple immutable vectors.
 
 ## Attributes
 <pre>
-<a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/__init__.py#L1'>Module: generalvector</a>
-├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L11'>Class: Vec</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/general.py#L94'>Method: absolute</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L123'>Method: clamp</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/general.py#L79'>Method: confineTo</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L169'>Method: distance</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L143'>Method: hex</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L134'>Method: inrange</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L68'>Method: length</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L114'>Method: max</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L105'>Method: min</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L74'>Method: normalized</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L89'>Method: random</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L150'>Method: range</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector.py#L83'>Method: round</a>
-│  └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/general.py#L42'>Method: sanitize</a>
-└─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L11'>Class: Vec2</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/general.py#L94'>Method: absolute</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L124'>Method: clamp</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/general.py#L79'>Method: confineTo</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L163'>Method: distance</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L134'>Method: inrange</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L69'>Method: length</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L115'>Method: max</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L106'>Method: min</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L75'>Method: normalized</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L90'>Method: random</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L145'>Method: range</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/vector2.py#L84'>Method: round</a>
-   └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/6c7dd3ca1e5eb1e618167b802c89216d93798623/generalvector/general.py#L42'>Method: sanitize</a>
+<a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/__init__.py#L1'>Module: generalvector</a>
+├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L11'>Class: Vec</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/general.py#L94'>Method: absolute</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L123'>Method: clamp</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/general.py#L79'>Method: confineTo</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L169'>Method: distance</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L143'>Method: hex</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L134'>Method: inrange</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L68'>Method: length</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L114'>Method: max</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L105'>Method: min</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L74'>Method: normalized</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L89'>Method: random</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L150'>Method: range</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector.py#L83'>Method: round</a>
+│  └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/general.py#L42'>Method: sanitize</a>
+└─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L11'>Class: Vec2</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/general.py#L94'>Method: absolute</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L124'>Method: clamp</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/general.py#L79'>Method: confineTo</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L163'>Method: distance</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L134'>Method: inrange</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L69'>Method: length</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L115'>Method: max</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L106'>Method: min</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L75'>Method: normalized</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L90'>Method: random</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L145'>Method: range</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/vector2.py#L84'>Method: round</a>
+   └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/712ed0a47619a5256b583c067d47d92408bca97d/generalvector/general.py#L42'>Method: sanitize</a>
 </pre>
 
 ## Todos
 
 <sup>
-Generated 2021-01-29 11:44 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/6c7dd3ca1e5eb1e618167b802c89216d93798623'>6c7dd3ca1e5eb1e618167b802c89216d93798623</a>.
+Generated 2021-01-29 11:45 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/712ed0a47619a5256b583c067d47d92408bca97d'>712ed0a47619a5256b583c067d47d92408bca97d</a>.
 </sup>
