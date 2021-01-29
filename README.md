@@ -58,5 +58,5 @@ Simple immutable vectors.
 ## Todos
 
 <sup>
-Generated 2021-01-29 11:42 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/6c7dd3ca1e5eb1e618167b802c89216d93798623'>6c7dd3ca1e5eb1e618167b802c89216d93798623</a>.
+Generated 2021-01-29 11:44 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/6c7dd3ca1e5eb1e618167b802c89216d93798623'>6c7dd3ca1e5eb1e618167b802c89216d93798623</a>.
 </sup>
