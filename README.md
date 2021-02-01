@@ -12,9 +12,7 @@ Simple immutable vectors.
 <a href='#generalvector-1.5.2'>generalvector 1.5.2</a>
 ├─ <a href='#Contents'>Contents</a>
 ├─ <a href='#Installation'>Installation</a>
-├─ <a href='#Attributes'>Attributes</a>
-└─ <a href='#Todo'>Todo</a>
-   └─ <a href='#None'>None</a>
+└─ <a href='#Attributes'>Attributes</a>
 </pre>
 
 ## Installation
@@ -56,12 +54,6 @@ Simple immutable vectors.
    └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L42'>Method: sanitize</a>
 </pre>
 
-## Todo
-
-<i>
-Nothing to see here
-</i>
-
 <sup>
-Generated 2021-02-01 12:11 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-01 12:36 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
