@@ -55,5 +55,5 @@ Simple immutable vectors.
 </pre>
 
 <sup>
-Generated 2021-02-02 12:52 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-02 13:07 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
