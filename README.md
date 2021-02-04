@@ -1,4 +1,4 @@
-# generalvector 1.5.2
+# generalvector 1.5.3
 Simple immutable vectors.
 
 [![workflow Actions Status](https://github.com/ManderaGeneral/generalvector/workflows/workflow/badge.svg)](https://github.com/ManderaGeneral/generalvector/actions)
@@ -9,7 +9,7 @@ Simple immutable vectors.
 
 ## Contents
 <pre>
-<a href='#generalvector-1.5.2'>generalvector 1.5.2</a>
+<a href='#generalvector-1.5.3'>generalvector 1.5.3</a>
 ├─ <a href='#Contents'>Contents</a>
 ├─ <a href='#Installation'>Installation</a>
 └─ <a href='#Attributes'>Attributes</a>
@@ -55,5 +55,5 @@ Simple immutable vectors.
 </pre>
 
 <sup>
-Generated 2021-02-04 11:14 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-04 11:28 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>

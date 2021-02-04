@@ -6,7 +6,7 @@ setup(
     name="generalvector",
     author='Rickard "Mandera" Abraham',
     author_email="rickard.abraham@gmail.com",
-    version="1.5.2",
+    version="1.5.3",
     description="Simple immutable vectors.",
     long_description=(Path(__file__).parent / 'README.md').read_text(encoding='utf-8'),
     long_description_content_type="text/markdown",
