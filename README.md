@@ -57,5 +57,5 @@ This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 </pre>
 
 <sup>
-Generated 2021-02-05 12:08 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-05 12:26 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
