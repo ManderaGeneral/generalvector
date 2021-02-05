@@ -1,16 +1,16 @@
-# generalvector 1.5.6
+# generalvector
 Simple immutable vectors.
 
 This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 
 ## Information
-| Package                                                          | Version                                          | Latest Release       | Python                                                                                                                   | Platform        |
-|:-----------------------------------------------------------------|:-------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.6](https://pypi.org/project/generalvector/) | 2021-02-04 17:13 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |
+| Package                                                          | Version                                          | Latest Release       | Python                                                                                                                   | Platform        | Todos                                                     |
+|:-----------------------------------------------------------------|:-------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|:----------------------------------------------------------|
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.6](https://pypi.org/project/generalvector/) | 2021-02-04 17:13 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu | [0](https://github.com/ManderaGeneral/generalvector#Todo) |
 
 ## Contents
 <pre>
-<a href='#generalvector-1.5.6'>generalvector 1.5.6</a>
+<a href='#generalvector'>generalvector</a>
 ├─ <a href='#Information'>Information</a>
 ├─ <a href='#Contents'>Contents</a>
 ├─ <a href='#Installation'>Installation</a>
@@ -57,5 +57,5 @@ This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 </pre>
 
 <sup>
-Generated 2021-02-05 12:26 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-05 12:37 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
