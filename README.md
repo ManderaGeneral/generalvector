@@ -2,9 +2,9 @@
 Simple immutable vectors.
 
 ## Information
-| Package                                                          | Version   | Python         | Platform              |
-|:-----------------------------------------------------------------|:----------|:---------------|:----------------------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | 1.5.6     | ('3.8', '3.9') | ('windows', 'ubuntu') |
+| Package                                                          | Version                                          | Latest Release       | Python                                                                                                                   | Platform        |
+|:-----------------------------------------------------------------|:-------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.6](https://pypi.org/project/generalvector/) | 2021-02-04 17:13 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |
 
 ## Contents
 <pre>
@@ -55,5 +55,5 @@ Simple immutable vectors.
 </pre>
 
 <sup>
-Generated 2021-02-04 18:27 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-05 11:05 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
