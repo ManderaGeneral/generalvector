@@ -2,11 +2,9 @@
 from generallibrary import typeChecker, confineTo
 
 
-class GeneralVector:
-    """
-    Not to be used directly.
-    GeneralVector class that Vec2 and Vec inherits for shared functions, end-goal is that all methods are moved here to make package dry
-    """
+class _GeneralVector:
+    """ GeneralVector class that Vec2 and Vec inherits for shared functions.
+        Todo: Move most methods to _GeneralVector. """
     def __init__(self, *axis, length):
         axis = tuple([float(n) if typeChecker(n, str, error=False) else n for n in axis if n is not None])
 
@@ -16,7 +14,7 @@ class GeneralVector:
 
         elif axisLen == 1:
 
-            if typeChecker(axis[0], GeneralVector, error=False):
+            if typeChecker(axis[0], _GeneralVector, error=False):
                 vector = axis[0]
                 if len(vector.axis) != length:
                     raise AttributeError(f"{vector} was supplied as first argument but it's axis length is not {length}")

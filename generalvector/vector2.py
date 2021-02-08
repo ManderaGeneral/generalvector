@@ -1,19 +1,17 @@
 
-from math import sqrt
+from generallibrary import clamp, inrange, typeChecker
+from generalvector.general import _GeneralVector
 
+from math import sqrt
 import random
 
-from generallibrary import clamp, inrange, typeChecker
 
-from generalvector.general import GeneralVector
-
-
-class Vec2(GeneralVector):
+class Vec2(_GeneralVector):
     """
     Immutable vector2.
     """
     def __init__(self, x=None, y=None):
-        GeneralVector.__init__(self, x, y, length=2)
+        _GeneralVector.__init__(self, x, y, length=2)
 
         self.x = self.axis[0]
         self.y = self.axis[1]
@@ -25,7 +23,7 @@ class Vec2(GeneralVector):
         return self.__str__()
 
     def __eq__(self, other):
-        if typeChecker(other, GeneralVector, error=False):
+        if typeChecker(other, _GeneralVector, error=False):
             return self.x == other.x and self.y == other.y
         else:
             return self.x == other and self.y == other

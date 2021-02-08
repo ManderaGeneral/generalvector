@@ -4,16 +4,15 @@ from math import sqrt
 import random
 
 from generallibrary import clamp, inrange, typeChecker
+from generalvector.general import _GeneralVector
 
-from generalvector.general import GeneralVector
 
-
-class Vec(GeneralVector):
+class Vec(_GeneralVector):
     """
     Immutable vector.
     """
     def __init__(self, x=None, y=None, z=None):
-        GeneralVector.__init__(self, x, y, z, length=3)
+        _GeneralVector.__init__(self, x, y, z, length=3)
 
         self.x = self.axis[0]
         self.y = self.axis[1]
@@ -26,7 +25,7 @@ class Vec(GeneralVector):
         return self.__str__()
 
     def __eq__(self, other):
-        if typeChecker(other, GeneralVector, error=False):
+        if typeChecker(other, _GeneralVector, error=False):
             return self.x == other.x and self.y == other.y and self.z == other.z
         else:
             return self.x == other and self.y == other and self.z == other

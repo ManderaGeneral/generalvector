@@ -8,5 +8,6 @@
     "extras_require": {},
     "topics": [
         "utility"
-    ]
+    ],
+    "manifest": "{metadata.json}"
 }
