@@ -4,9 +4,9 @@ Simple immutable vectors.
 This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 
 ## Information
-| Package                                                          | Version                                          | Latest Release       | Python                                                                                                                   | Platform        | Todos                                                     |   Hierarchy |
-|:-----------------------------------------------------------------|:-------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|:----------------------------------------------------------|------------:|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.6](https://pypi.org/project/generalvector/) | 2021-02-04 17:13 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu | [1](https://github.com/ManderaGeneral/generalvector#Todo) |           1 |
+| Package                                                          | Ver                                              | Latest Release       | Python                                                                                                                   | Platform        | Todo                                                      |   Lvl | Tests   |
+|:-----------------------------------------------------------------|:-------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|:----------------------------------------------------------|------:|:--------|
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.7](https://pypi.org/project/generalvector/) | 2021-02-09 15:46 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu | [1](https://github.com/ManderaGeneral/generalvector#Todo) |     1 | 100.0 % |
 
 ## Contents
 <pre>
@@ -63,5 +63,5 @@ This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2021-02-09 12:41 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-02-09 15:46 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
