@@ -1,6 +1,6 @@
 {
     "name": "generalvector",
-    "version": "1.5.7",
+    "version": "1.5.8",
     "description": "Simple immutable vectors.",
     "install_requires": [
         "generallibrary"
