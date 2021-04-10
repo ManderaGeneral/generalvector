@@ -4,9 +4,9 @@ Simple immutable vectors.
 This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 
 ## Information
-| Package                                                          | Ver                                              | Latest Release       | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Tests   |
-|:-----------------------------------------------------------------|:-------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.8](https://pypi.org/project/generalvector/) | 2021-02-26 15:48 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     1 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 100.0 % |
+| Package                                                          | Ver                                              | Latest Release        | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Tests   |
+|:-----------------------------------------------------------------|:-------------------------------------------------|:----------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.9](https://pypi.org/project/generalvector/) | 2021-04-10 14:36 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     1 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 100.0 % |
 
 ## Contents
 <pre>
@@ -52,10 +52,10 @@ This package and 3 other make up [ManderaGeneral](https://github.com/Mandera).
 </pre>
 
 ## Todo
-| Packager      | Module                                                                                                           | Message                                                                                                                                    |
-|:--------------|:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
-| generalvector | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
+| Module                                                                                                           | Message                                                                                                                                    |
+|:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
+| <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2021-04-10 14:02 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-04-10 14:36 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
