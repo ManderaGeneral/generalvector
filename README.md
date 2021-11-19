@@ -1,12 +1,12 @@
 # generalvector
 Simple immutable vectors.
 
-This package and 5 other make up [ManderaGeneral](https://github.com/ManderaGeneral).
+This package and 6 other make up [ManderaGeneral](https://github.com/ManderaGeneral).
 
 ## Information
 | Package                                                          | Ver                                               | Latest Release       | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Tests   |
 |:-----------------------------------------------------------------|:--------------------------------------------------|:---------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.12](https://pypi.org/project/generalvector/) | 2021-11-19 00:35 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     1 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 100.0 % |
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.13](https://pypi.org/project/generalvector/) | 2021-11-19 18:46 CET | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     1 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 100.0 % |
 
 ## Contents
 <pre>
@@ -57,5 +57,5 @@ This package and 5 other make up [ManderaGeneral](https://github.com/ManderaGene
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2021-11-19 18:14 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-11-19 18:46 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
