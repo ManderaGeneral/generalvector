@@ -1,4 +1,7 @@
 {
+    "enabled": true,
+    "private": false,
+    "installable": true,
     "name": "generalvector",
     "version": "1.5.13",
     "description": "Simple immutable vectors.",
@@ -8,5 +11,6 @@
     "extras_require": {},
     "topics": [
         "utility"
-    ]
+    ],
+    "manifest": []
 }
