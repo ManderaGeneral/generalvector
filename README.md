@@ -1,7 +1,7 @@
 # generalvector
 Simple immutable vectors.
 
-This package and 5 other make up [ManderaGeneral](https://github.com/ManderaGeneral).
+This package and 6 other make up [ManderaGeneral](https://github.com/ManderaGeneral).
 
 ## Information
 | Package                                                          | Ver                                               | Latest Release       | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Tests   |
@@ -57,5 +57,5 @@ This package and 5 other make up [ManderaGeneral](https://github.com/ManderaGene
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2021-11-22 16:15 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2021-11-24 10:41 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
