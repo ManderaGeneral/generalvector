@@ -3,7 +3,7 @@
     "private": false,
     "installable": true,
     "name": "generalvector",
-    "version": "1.5.13",
+    "version": "1.5.14",
     "description": "Simple immutable vectors.",
     "install_requires": [
         "generallibrary"
