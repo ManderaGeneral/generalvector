@@ -22,7 +22,7 @@ Simple immutable vectors.
 ## Information
 | Package                                                          | Ver                                               | Latest Release        | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Cover   |
 |:-----------------------------------------------------------------|:--------------------------------------------------|:----------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.16](https://pypi.org/project/generalvector/) | 2022-08-24 11:34 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 51.9 %  |
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.17](https://pypi.org/project/generalvector/) | 2022-09-08 19:53 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 51.9 %  |
 
 ## Attributes
 <pre>
@@ -63,5 +63,5 @@ Pull requests are **not wanted**, please discuss with me before investing any ti
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2022-09-08 19:45 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2022-09-08 19:53 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
