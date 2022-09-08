@@ -4,8 +4,6 @@ Simple immutable vectors.
 ## Contents
 <pre>
 <a href='#generalvector'>generalvector</a>
-├─ <a href='#Contents'>Contents</a>
-├─ <a href='#Examples'>Examples</a>
 ├─ <a href='#Installation'>Installation</a>
 ├─ <a href='#Information'>Information</a>
 ├─ <a href='#Attributes'>Attributes</a>
@@ -22,7 +20,7 @@ Simple immutable vectors.
 ## Information
 | Package                                                          | Ver                                               | Latest Release        | Python                                                                                                                                                                                  | Platform        |   Lvl | Todo                                                      | Cover   |
 |:-----------------------------------------------------------------|:--------------------------------------------------|:----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.17](https://pypi.org/project/generalvector/) | 2022-09-08 19:53 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/), [3.10](https://www.python.org/downloads/release/python-3100/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 51.9 %  |
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.18](https://pypi.org/project/generalvector/) | 2022-09-08 21:27 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/), [3.10](https://www.python.org/downloads/release/python-3100/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 51.9 %  |
 
 ## Attributes
 <pre>
@@ -63,5 +61,5 @@ Pull requests are **not wanted**, please discuss with me before investing any ti
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2022-09-08 20:40 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2022-09-08 21:27 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
