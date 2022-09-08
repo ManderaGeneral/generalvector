@@ -1,27 +1,28 @@
 # generalvector
 Simple immutable vectors.
 
-This package and 3 other make up [ManderaGeneral](https://github.com/ManderaGeneral).
-
-## Information
-| Package                                                          | Ver                                               | Latest Release        | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Cover   |
-|:-----------------------------------------------------------------|:--------------------------------------------------|:----------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.16](https://pypi.org/project/generalvector/) | 2022-08-24 11:34 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     1 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 52.1 %  |
-
 ## Contents
 <pre>
 <a href='#generalvector'>generalvector</a>
-├─ <a href='#Information'>Information</a>
 ├─ <a href='#Contents'>Contents</a>
+├─ <a href='#Examples'>Examples</a>
 ├─ <a href='#Installation'>Installation</a>
+├─ <a href='#Information'>Information</a>
 ├─ <a href='#Attributes'>Attributes</a>
+├─ <a href='#Contributions'>Contributions</a>
 └─ <a href='#Todo'>Todo</a>
 </pre>
+
 
 ## Installation
 | Command                     | <a href='https://pypi.org/project/generallibrary'>generallibrary</a>   |
 |:----------------------------|:-----------------------------------------------------------------------|
 | `pip install generalvector` | Yes                                                                    |
+
+## Information
+| Package                                                          | Ver                                               | Latest Release        | Python                                                                                                                   | Platform        |   Lvl | Todo                                                      | Cover   |
+|:-----------------------------------------------------------------|:--------------------------------------------------|:----------------------|:-------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.16](https://pypi.org/project/generalvector/) | 2022-08-24 11:34 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 52.0 %  |
 
 ## Attributes
 <pre>
@@ -51,11 +52,15 @@ This package and 3 other make up [ManderaGeneral](https://github.com/ManderaGene
    └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L82'>Method: round</a>
 </pre>
 
+## Contributions
+Issue-creation and discussion is most welcome!
+Pull requests are **not wanted**, please discuss with me before investing any time.
+
 ## Todo
 | Module                                                                                                           | Message                                                                                                                                    |
 |:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2022-09-08 06:23 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2022-09-08 18:51 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
