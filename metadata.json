@@ -7,7 +7,7 @@
     "private": false,
     "name": "generalvector",
     "target": "python",
-    "version": "1.5.18",
+    "version": "1.5.19",
     "description": "Simple immutable vectors.",
     "topics": [
         "utility"
