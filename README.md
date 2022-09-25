@@ -4,6 +4,7 @@ Simple immutable vectors.
 ## Contents
 <pre>
 <a href='#generalvector'>generalvector</a>
+├─ <a href='#Dependency-Tree'>Dependency Tree</a>
 ├─ <a href='#Installation'>Installation</a>
 ├─ <a href='#Information'>Information</a>
 ├─ <a href='#Attributes'>Attributes</a>
@@ -11,49 +12,64 @@ Simple immutable vectors.
 └─ <a href='#Todo'>Todo</a>
 </pre>
 
+## Dependency Tree
+```mermaid
+flowchart LR
+3([file]) --> 4([packager])
+1([library]) --> 0([vector])
+2([import]) --> 1([library])
+1([library]) --> 3([file])
+click 0 "https://github.com/ManderaGeneral/generalvector"
+click 1 "https://github.com/ManderaGeneral/generallibrary"
+click 2 "https://github.com/ManderaGeneral/generalimport"
+click 3 "https://github.com/ManderaGeneral/generalfile"
+click 4 "https://github.com/ManderaGeneral/generalpackager"
+style 0 fill:#482
+```
+
 
 ## Installation
-| Command                     | <a href='https://pypi.org/project/generallibrary'>generallibrary</a>   |
-|:----------------------------|:-----------------------------------------------------------------------|
-| `pip install generalvector` | Yes                                                                    |
+| Command                                                              | `pip install generalvector`   |
+|:---------------------------------------------------------------------|:------------------------------|
+| <a href='https://pypi.org/project/generallibrary'>generallibrary</a> | Yes                           |
 
 ## Information
 | Package                                                          | Ver                                               | Latest Release        | Python                                                                                                                                                                                  | Platform        |   Lvl | Todo                                                      | Cover   |
 |:-----------------------------------------------------------------|:--------------------------------------------------|:----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|------:|:----------------------------------------------------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.19](https://pypi.org/project/generalvector/) | 2022-09-09 12:44 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/), [3.10](https://www.python.org/downloads/release/python-3100/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 52.3 %  |
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.19](https://pypi.org/project/generalvector/) | 2022-09-09 12:44 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/), [3.10](https://www.python.org/downloads/release/python-3100/) | Windows, Ubuntu |     2 | [1](https://github.com/ManderaGeneral/generalvector#Todo) | 52.1 %  |
 
 ## Attributes
 <pre>
-<a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/__init__.py#L1'>Module: generalvector</a>
-├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L10'>Class: Vec</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L122'>Method: clamp</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L168'>Method: distance</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L142'>Method: hex</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L133'>Method: inrange</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L67'>Method: length</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L113'>Method: max</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L104'>Method: min</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L73'>Method: normalized</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L88'>Method: random</a>
-│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L149'>Method: range</a>
-│  └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector.py#L82'>Method: round</a>
-└─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L9'>Class: Vec2</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L122'>Method: clamp</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L161'>Method: distance</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L132'>Method: inrange</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L67'>Method: length</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L113'>Method: max</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L104'>Method: min</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L73'>Method: normalized</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L88'>Method: random</a>
-   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L143'>Method: range</a>
-   └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/53ac166/generalvector/vector2.py#L82'>Method: round</a>
+<a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/__init__.py#L1'>Module: generalvector</a>
+├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L10'>Class: Vec</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L122'>Method: clamp</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L168'>Method: distance</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L142'>Method: hex</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L133'>Method: inrange</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L67'>Method: length</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L113'>Method: max</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L104'>Method: min</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L73'>Method: normalized</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L88'>Method: random</a>
+│  ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L149'>Method: range</a>
+│  └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L82'>Method: round</a>
+└─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L9'>Class: Vec2</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L122'>Method: clamp</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L161'>Method: distance</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L132'>Method: inrange</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L67'>Method: length</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L113'>Method: max</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L104'>Method: min</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L73'>Method: normalized</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L88'>Method: random</a>
+   ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L143'>Method: range</a>
+   └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L82'>Method: round</a>
 </pre>
 
 ## Contributions
-Issue-creation and discussion is most welcome!
+Issue-creation and discussions are most welcome!
 
-Pull requests are **not wanted**, please discuss with me before investing any time.
+Pull requests are not wanted, please discuss with me before investing any time
 
 ## Todo
 | Module                                                                                                           | Message                                                                                                                                    |
@@ -61,5 +77,5 @@ Pull requests are **not wanted**, please discuss with me before investing any ti
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2022-09-09 12:44 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/53ac166'>53ac166</a>.
+Generated 2022-09-25 12:20 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
