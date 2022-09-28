@@ -16,10 +16,10 @@ Simple immutable vectors.
 ```mermaid
 flowchart LR
 1([library]) --> 3([vector])
-2([file]) --> 4([packager])
 1([library]) --> 4([packager])
 0([import]) --> 1([library])
 1([library]) --> 2([file])
+2([file]) --> 4([packager])
 click 0 "https://github.com/ManderaGeneral/generalimport"
 click 1 "https://github.com/ManderaGeneral/generallibrary"
 click 2 "https://github.com/ManderaGeneral/generalfile"
@@ -78,5 +78,5 @@ Pull requests are not wanted, please discuss with me before investing any time
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2022-09-28 13:08 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2022-09-28 15:46 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
