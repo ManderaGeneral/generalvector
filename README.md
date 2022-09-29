@@ -15,10 +15,10 @@ Simple immutable vectors.
 ## Dependency Diagram
 ```mermaid
 flowchart LR
+1([library]) --> 2([file])
 2([file]) --> 4([packager])
 1([library]) --> 4([packager])
 0([import]) --> 1([library])
-1([library]) --> 2([file])
 1([library]) --> 3([vector])
 click 0 "https://github.com/ManderaGeneral/generalimport"
 click 1 "https://github.com/ManderaGeneral/generallibrary"
@@ -78,5 +78,5 @@ Pull requests are not wanted, please discuss with me before investing any time
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
 
 <sup>
-Generated 2022-09-29 15:19 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2022-09-29 16:31 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
