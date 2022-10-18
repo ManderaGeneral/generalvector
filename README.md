@@ -1,26 +1,34 @@
-# generalvector
+<details open>
+<summary><h1>generalvector</h1></summary>
+
 Simple immutable vectors.
 
-## Contents
+<details>
+<summary><h2>Table of Contents</h2></summary>
+
 <pre>
 <a href='#generalvector'>generalvector</a>
-├─ <a href='#ManderaGeneral-Dependency-Diagram'>ManderaGeneral Dependency Diagram</a>
+├─ <a href='#Dependency-Diagram-for-ManderaGeneral'>Dependency Diagram for ManderaGeneral</a>
 ├─ <a href='#Installation-showing-dependencies'>Installation showing dependencies</a>
 ├─ <a href='#Information'>Information</a>
 ├─ <a href='#Attributes'>Attributes</a>
 ├─ <a href='#Contributions'>Contributions</a>
 └─ <a href='#Todo'>Todo</a>
 </pre>
+</details>
 
-## ManderaGeneral Dependency Diagram
+
+<details open>
+<summary><h2>Dependency Diagram for ManderaGeneral</h2></summary>
+
 ```mermaid
 flowchart LR
-1([library]) --> 2([file])
-1([library]) --> 4([packager])
-0([import]) --> 2([file])
 1([library]) --> 3([vector])
-2([file]) --> 4([packager])
 0([import]) --> 1([library])
+1([library]) --> 2([file])
+0([import]) --> 2([file])
+1([library]) --> 4([packager])
+2([file]) --> 4([packager])
 click 0 "https://github.com/ManderaGeneral/generalimport"
 click 1 "https://github.com/ManderaGeneral/generallibrary"
 click 2 "https://github.com/ManderaGeneral/generalfile"
@@ -28,19 +36,31 @@ click 3 "https://github.com/ManderaGeneral/generalvector"
 click 4 "https://github.com/ManderaGeneral/generalpackager"
 style 3 fill:#482
 ```
+</details>
 
-## Installation showing dependencies
+
+<details open>
+<summary><h2>Installation showing dependencies</h2></summary>
+
 | `pip install`                                                        | `generalvector`   |
 |:---------------------------------------------------------------------|:------------------|
 | <a href='https://pypi.org/project/generallibrary'>generallibrary</a> | ✔️                |
+</details>
 
-## Information
+
+<details open>
+<summary><h2>Information</h2></summary>
+
 | Package                                                          | Ver                                                | Latest Release        | Python                                                                                                                                                                                  | Platform        | Cover   |
 |:-----------------------------------------------------------------|:---------------------------------------------------|:----------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|:----------------|:--------|
-| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.110](https://pypi.org/project/generalvector/) | 2022-10-07 16:07 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/), [3.10](https://www.python.org/downloads/release/python-3100/) | Windows, Ubuntu | 53.0 %  |
+| [generalvector](https://github.com/ManderaGeneral/generalvector) | [1.5.110](https://pypi.org/project/generalvector/) | 2022-10-07 16:07 CEST | [3.8](https://www.python.org/downloads/release/python-380/), [3.9](https://www.python.org/downloads/release/python-390/), [3.10](https://www.python.org/downloads/release/python-3100/) | Windows, Ubuntu | 52.4 %  |
+</details>
 
 
-## Attributes
+
+<details>
+<summary><h2>Attributes</h2></summary>
+
 <pre>
 <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/__init__.py#L1'>Module: generalvector</a>
 ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector.py#L10'>Class: Vec</a>
@@ -67,17 +87,29 @@ style 3 fill:#482
    ├─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L143'>Method: range</a>
    └─ <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/vector2.py#L82'>Method: round</a>
 </pre>
+</details>
 
-## Contributions
+
+<details open>
+<summary><h2>Contributions</h2></summary>
+
 Issue-creation and discussions are most welcome!
 
 Pull requests are not wanted, please discuss with me before investing any time
+</details>
 
-## Todo
+
+<details>
+<summary><h2>Todo</h2></summary>
+
 | Module                                                                                                           | Message                                                                                                                                    |
 |:-----------------------------------------------------------------------------------------------------------------|:-------------------------------------------------------------------------------------------------------------------------------------------|
 | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L1'>general.py</a> | <a href='https://github.com/ManderaGeneral/generalvector/blob/master/generalvector/general.py#L7'>Move most methods to _GeneralVector.</a> |
+</details>
+
 
 <sup>
-Generated 2022-10-15 09:34 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2022-10-18 14:14 CEST for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
+</details>
+
