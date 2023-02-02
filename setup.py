@@ -11,7 +11,7 @@ setup(
     name="generalvector",
     author='Rickard "Mandera" Abraham',
     author_email="rickard.abraham@gmail.com",
-    version="1.5.111",
+    version="1.5.112",
     description="Simple immutable vectors.",
     long_description=long_description,
     long_description_content_type="text/markdown",
