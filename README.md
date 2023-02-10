@@ -23,13 +23,13 @@ Simple immutable vectors.
 
 ```mermaid
 flowchart LR
+1([tool]) --> 2([library])
+2([library]) --> 4([vector])
 3([file]) --> 5([packager])
 0([import]) --> 3([file])
-2([library]) --> 3([file])
-2([library]) --> 4([vector])
-2([library]) --> 5([packager])
-1([tool]) --> 2([library])
 0([import]) --> 2([library])
+2([library]) --> 5([packager])
+2([library]) --> 3([file])
 click 0 "https://github.com/ManderaGeneral/generalimport"
 click 1 "https://github.com/ManderaGeneral/generaltool"
 click 2 "https://github.com/ManderaGeneral/generallibrary"
@@ -111,7 +111,7 @@ Pull requests are currently not wanted, please discuss with me before investing 
 
 
 <sup>
-Generated 2023-02-02 13:29 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
+Generated 2023-02-10 08:50 CET for commit <a href='https://github.com/ManderaGeneral/generalvector/commit/master'>master</a>.
 </sup>
 </details>
 
