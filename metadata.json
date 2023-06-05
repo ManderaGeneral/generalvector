@@ -7,7 +7,7 @@
     "enabled": true,
     "private": false,
     "name": "generalvector",
-    "version": "1.5.113",
+    "version": "1.5.114",
     "description": "Simple immutable vectors.",
     "topics": [
         "utility"
